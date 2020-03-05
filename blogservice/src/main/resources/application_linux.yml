@@ -1,0 +1,68 @@
+server: 
+#  tomcat: 
+#    max-connections: 10000
+#    max-threads: 200
+#    min-spare-threads: 200
+#    accept-count: 200
+  undertow: 
+    buffer-size: 4096
+    io-threads: 20
+    max-http-post-size: -1
+    worker-threads: 160
+  port: 28080
+
+spring: 
+  datasource: 
+    type: com.alibaba.druid.pool.DruidDataSource
+
+datasource: 
+  druid: 
+    filters: stat
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.17.1.80:1521:hfnet
+    username: hftacc
+    password: hftacc
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+      
+mybatis: 
+  mapperLocations: classpath:conf/mybatis/mapper/oracle/*.xml
+  typeAliasesPackage: jieyi.accservice.form
+
+communicate: 
+  serverip: 172.17.20.15
+  serverport: 41005
+  datagramxmlpath: /datagramxml
+customcommincicate:
+  serverip: 172.17.20.15
+  serverport: 30002
+  servername: /customer/v1/
+zjbomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Zjbcardservice/account/cardInfoQuery
+jtbomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Jtbcardservice/account/cardInfoQuery
+pbocomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Pboccardservice/account/cardInfoQuery
+
+bizparam: 
+  tsk: 6F186550AF0E78265154F726387E756C
+
+des: 
+  key: 78B49F4BF5B16A17
+  otherkey: f85as39l

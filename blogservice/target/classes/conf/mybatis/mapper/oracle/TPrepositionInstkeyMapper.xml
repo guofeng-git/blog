@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TPrepositionInstkeyMapper" >
+  <resultMap id="BaseResultMap" type="jieyi.accservice.form.TPrepositionInstkey" >
+    <id column="instcd" property="instcd" jdbcType="VARCHAR" />
+    <id column="mchnt_no" property="mchntNo" jdbcType="VARCHAR" />
+    <id column="term_no" property="termNo" jdbcType="VARCHAR" />
+    <result column="plat_privindex" property="platPrivindex" jdbcType="VARCHAR" />
+    <result column="plat_modulus" property="platModulus" jdbcType="VARCHAR" />
+    <result column="inst_modulus" property="instModulus" jdbcType="VARCHAR" />
+    <result column="inst_index" property="instIndex" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="created_time" property="createdTime" jdbcType="VARCHAR" />
+    <result column="last_modified_by" property="lastModifiedBy" jdbcType="VARCHAR" />
+    <result column="last_modified_time" property="lastModifiedTime" jdbcType="VARCHAR" />
+    <result column="audit_by" property="auditBy" jdbcType="VARCHAR" />
+    <result column="audit_time" property="auditTime" jdbcType="VARCHAR" />
+    <result column="check_status" property="checkStatus" jdbcType="CHAR" />
+    <result column="rsvd1" property="rsvd1" jdbcType="VARCHAR" />
+    <result column="rsvd2" property="rsvd2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    instcd, mchnt_no, term_no, plat_privindex, plat_modulus, inst_modulus, inst_index, 
+    status, created_by, created_time, last_modified_by, last_modified_time, audit_by, 
+    audit_time, check_status, rsvd1, rsvd2
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_preposition_instkey
+    where instcd = #{instcd,jdbcType=VARCHAR}
+      and mchnt_no = #{mchntNo,jdbcType=VARCHAR}
+      and term_no = #{termNo,jdbcType=VARCHAR}
+      and status = '0'
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    delete from t_preposition_instkey
+    where instcd = #{instcd,jdbcType=VARCHAR}
+      and mchnt_no = #{mchntNo,jdbcType=VARCHAR}
+      and term_no = #{termNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    insert into t_preposition_instkey (instcd, mchnt_no, term_no, 
+      plat_privindex, plat_modulus, inst_modulus, 
+      inst_index, status, created_by, 
+      created_time, last_modified_by, last_modified_time, 
+      audit_by, audit_time, check_status, 
+      rsvd1, rsvd2)
+    values (#{instcd,jdbcType=VARCHAR}, #{mchntNo,jdbcType=VARCHAR}, #{termNo,jdbcType=VARCHAR}, 
+      #{platPrivindex,jdbcType=VARCHAR}, #{platModulus,jdbcType=VARCHAR}, #{instModulus,jdbcType=VARCHAR}, 
+      #{instIndex,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{createdBy,jdbcType=VARCHAR}, 
+      #{createdTime,jdbcType=VARCHAR}, #{lastModifiedBy,jdbcType=VARCHAR}, #{lastModifiedTime,jdbcType=VARCHAR}, 
+      #{auditBy,jdbcType=VARCHAR}, #{auditTime,jdbcType=VARCHAR}, #{checkStatus,jdbcType=CHAR}, 
+      #{rsvd1,jdbcType=VARCHAR}, #{rsvd2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    insert into t_preposition_instkey
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="instcd != null" >
+        instcd,
+      </if>
+      <if test="mchntNo != null" >
+        mchnt_no,
+      </if>
+      <if test="termNo != null" >
+        term_no,
+      </if>
+      <if test="platPrivindex != null" >
+        plat_privindex,
+      </if>
+      <if test="platModulus != null" >
+        plat_modulus,
+      </if>
+      <if test="instModulus != null" >
+        inst_modulus,
+      </if>
+      <if test="instIndex != null" >
+        inst_index,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="lastModifiedBy != null" >
+        last_modified_by,
+      </if>
+      <if test="lastModifiedTime != null" >
+        last_modified_time,
+      </if>
+      <if test="auditBy != null" >
+        audit_by,
+      </if>
+      <if test="auditTime != null" >
+        audit_time,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="rsvd1 != null" >
+        rsvd1,
+      </if>
+      <if test="rsvd2 != null" >
+        rsvd2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="instcd != null" >
+        #{instcd,jdbcType=VARCHAR},
+      </if>
+      <if test="mchntNo != null" >
+        #{mchntNo,jdbcType=VARCHAR},
+      </if>
+      <if test="termNo != null" >
+        #{termNo,jdbcType=VARCHAR},
+      </if>
+      <if test="platPrivindex != null" >
+        #{platPrivindex,jdbcType=VARCHAR},
+      </if>
+      <if test="platModulus != null" >
+        #{platModulus,jdbcType=VARCHAR},
+      </if>
+      <if test="instModulus != null" >
+        #{instModulus,jdbcType=VARCHAR},
+      </if>
+      <if test="instIndex != null" >
+        #{instIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedBy != null" >
+        #{lastModifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        #{lastModifiedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="auditBy != null" >
+        #{auditBy,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=CHAR},
+      </if>
+      <if test="rsvd1 != null" >
+        #{rsvd1,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd2 != null" >
+        #{rsvd2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    update t_preposition_instkey
+    <set >
+      <if test="platPrivindex != null" >
+        plat_privindex = #{platPrivindex,jdbcType=VARCHAR},
+      </if>
+      <if test="platModulus != null" >
+        plat_modulus = #{platModulus,jdbcType=VARCHAR},
+      </if>
+      <if test="instModulus != null" >
+        inst_modulus = #{instModulus,jdbcType=VARCHAR},
+      </if>
+      <if test="instIndex != null" >
+        inst_index = #{instIndex,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedBy != null" >
+        last_modified_by = #{lastModifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        last_modified_time = #{lastModifiedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="auditBy != null" >
+        audit_by = #{auditBy,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        audit_time = #{auditTime,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=CHAR},
+      </if>
+      <if test="rsvd1 != null" >
+        rsvd1 = #{rsvd1,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd2 != null" >
+        rsvd2 = #{rsvd2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where instcd = #{instcd,jdbcType=VARCHAR}
+      and mchnt_no = #{mchntNo,jdbcType=VARCHAR}
+      and term_no = #{termNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jieyi.accservice.form.TPrepositionInstkey" >
+    update t_preposition_instkey
+    set plat_privindex = #{platPrivindex,jdbcType=VARCHAR},
+      plat_modulus = #{platModulus,jdbcType=VARCHAR},
+      inst_modulus = #{instModulus,jdbcType=VARCHAR},
+      inst_index = #{instIndex,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=VARCHAR},
+      last_modified_by = #{lastModifiedBy,jdbcType=VARCHAR},
+      last_modified_time = #{lastModifiedTime,jdbcType=VARCHAR},
+      audit_by = #{auditBy,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=VARCHAR},
+      check_status = #{checkStatus,jdbcType=CHAR},
+      rsvd1 = #{rsvd1,jdbcType=VARCHAR},
+      rsvd2 = #{rsvd2,jdbcType=VARCHAR}
+    where instcd = #{instcd,jdbcType=VARCHAR}
+      and mchnt_no = #{mchntNo,jdbcType=VARCHAR}
+      and term_no = #{termNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datagram-config PUBLIC "-//HUATENG//DTD Datagram DTD//EN" "http://www.jieyi.com/datagram.dtd" >
+<datagram-config name="9024R" classname="jieyi.tools.commuclient_8583.form.data8583.Datagram8583">
+	<field property="tpdu" type="N" length="10" format="BCD" pendingdir="TRAILING" pendingchar="ZERO">
+		<default-value>6000000000</default-value>
+	</field>
+	<field property="header" type="N" length="12" format="BCD" pendingdir="TRAILING" pendingchar="ZERO">
+		<default-value>612200000000</default-value>
+	</field>
+	<field property="txntype" type="N" length="4" format="BCD" pendingdir="TRAILING" pendingchar="ZERO">
+		<default-value>0210</default-value>
+	</field>
+	<field property="bitmap" type="B" length="64" format="BINARY" pendingdir="TRAILING" pendingchar="ZERO">
+		<default-value>‭‭0111000000111110000000101000000100001110110100001001111000010111‬</default-value>
+	</field>	
+</datagram-config>

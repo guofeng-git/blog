@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TInfoAccountMapper" >
+    <resultMap id="BaseResultMap" type="jieyi.accservice.form.TInfoAccount" >
+        <id column="ACCOUNT_NO" property="accountNo" jdbcType="VARCHAR" />
+        <result column="ACCOUNT_NAME" property="accountName" jdbcType="VARCHAR" />
+        <result column="IS_REALNAME" property="isRealname" jdbcType="CHAR" />
+        <result column="CUSTOMER_NO" property="customerNo" jdbcType="VARCHAR" />
+        <result column="OPEN_DATE" property="openDate" jdbcType="CHAR" />
+        <result column="CLOSE_DATE" property="closeDate" jdbcType="CHAR" />
+        <result column="VALID_DATE" property="validDate" jdbcType="CHAR" />
+        <result column="CURR_CODE" property="currCode" jdbcType="VARCHAR" />
+        <result column="STATUS" property="status" jdbcType="CHAR" />
+        <result column="ACCTYPE" property="acctype" jdbcType="CHAR" />
+        <result column="OPEN_CHANNEL" property="openChannel" jdbcType="CHAR" />
+        <result column="STORE_NO" property="storeNo" jdbcType="VARCHAR" />
+        <result column="NETABBR" property="netabbr" jdbcType="VARCHAR" />
+        <result column="MCHNT_NO" property="mchntNo" jdbcType="VARCHAR" />
+        <result column="MCHNT_ABBR" property="mchntAbbr" jdbcType="VARCHAR" />
+        <result column="ACQ_INST_CODE" property="acqInstCode" jdbcType="VARCHAR" />
+        <result column="IF_ONETIME_USE" property="ifOnetimeUse" jdbcType="CHAR" />
+        <result column="MANAGE_AMT" property="manageAmt" jdbcType="DECIMAL" />
+        <result column="BALANCE" property="balance" jdbcType="DECIMAL" />
+        <result column="AVAILABLE_BALANCE" property="availableBalance" jdbcType="DECIMAL" />
+        <result column="WITHDRAW_BALANCE" property="withdrawBalance" jdbcType="DECIMAL" />
+        <result column="FROZEN_AMOUNT" property="frozenAmount" jdbcType="DECIMAL" />
+        <result column="PREAUTHORIZED_AMOUNT" property="preauthorizedAmount" jdbcType="DECIMAL" />
+        <result column="LAST_DAY_BAL" property="lastDayBal" jdbcType="DECIMAL" />
+        <result column="LAST_MONTH_BAL" property="lastMonthBal" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CONS_AMT" property="daySumConsAmt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CONS_CNT" property="daySumConsCnt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_OUT_AMT" property="daySumOutAmt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_OUT_CNT" property="daySumOutCnt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_IN_AMT" property="daySumInAmt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_IN_CNT" property="daySumInCnt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CASH_AMT" property="daySumCashAmt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CASH_CNT" property="daySumCashCnt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CHG_AMT" property="daySumChgAmt" jdbcType="DECIMAL" />
+        <result column="DAY_SUM_CHG_CNT" property="daySumChgCnt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CONS_AMT" property="monSumConsAmt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CONS_CNT" property="monSumConsCnt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_OUT_AMT" property="monSumOutAmt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_OUT_CNT" property="monSumOutCnt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_IN_AMT" property="monSumInAmt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_IN_CNT" property="monSumInCnt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CASH_AMT" property="monSumCashAmt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CASH_CNT" property="monSumCashCnt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CHG_AMT" property="monSumChgAmt" jdbcType="DECIMAL" />
+        <result column="MON_SUM_CHG_CNT" property="monSumChgCnt" jdbcType="DECIMAL" />
+        <result column="ISS_INS_CODE" property="issInsCode" jdbcType="VARCHAR" />
+        <result column="ENCRYPTED_MSG" property="encryptedMsg" jdbcType="VARCHAR" />
+        <result column="SUM_CONS_AMT" property="sumConsAmt" jdbcType="DECIMAL" />
+        <result column="SUM_CONS_CNT" property="sumConsCnt" jdbcType="DECIMAL" />
+        <result column="SUM_CHG_AMT" property="sumChgAmt" jdbcType="DECIMAL" />
+        <result column="SUM_CHG_CNT" property="sumChgCnt" jdbcType="DECIMAL" />
+        <result column="SUM_OUT_AMT" property="sumOutAmt" jdbcType="DECIMAL" />
+        <result column="SUM_OUT_CNT" property="sumOutCnt" jdbcType="DECIMAL" />
+        <result column="SUM_IN_AMT" property="sumInAmt" jdbcType="DECIMAL" />
+        <result column="SUM_IN_CNT" property="sumInCnt" jdbcType="DECIMAL" />
+        <result column="SUM_CASH_AMT" property="sumCashAmt" jdbcType="DECIMAL" />
+        <result column="SUM_CASH_CNT" property="sumCashCnt" jdbcType="DECIMAL" />
+        <result column="PIN_CHK_AMT" property="pinChkAmt" jdbcType="DECIMAL" />
+        <result column="REM_AMT" property="remAmt" jdbcType="DECIMAL" />
+        <result column="MAX_CONS_AMT" property="maxConsAmt" jdbcType="DECIMAL" />
+        <result column="MAX_SV_AMT" property="maxSvAmt" jdbcType="DECIMAL" />
+        <result column="MAX_OUT_AMT" property="maxOutAmt" jdbcType="DECIMAL" />
+        <result column="MAX_IN_AMT" property="maxInAmt" jdbcType="DECIMAL" />
+        <result column="MAX_CASH_AMT" property="maxCashAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_CONS_AMT" property="dayMaxConsAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_SV_AMT" property="dayMaxSvAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_OUT_AMT" property="dayMaxOutAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_IN_AMT" property="dayMaxInAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_CASH_AMT" property="dayMaxCashAmt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_CONS_AMT" property="monMaxConsAmt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_SV_AMT" property="monMaxSvAmt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_OUT_AMT" property="monMaxOutAmt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_IN_AMT" property="monMaxInAmt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_CASH_AMT" property="monMaxCashAmt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_CONS_CNT" property="dayMaxConsCnt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_SV_CNT" property="dayMaxSvCnt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_OUT_CNT" property="dayMaxOutCnt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_IN_CNT" property="dayMaxInCnt" jdbcType="DECIMAL" />
+        <result column="DAY_MAX_CASH_CNT" property="dayMaxCashCnt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_CONS_CNT" property="monMaxConsCnt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_SV_CNT" property="monMaxSvCnt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_OUT_CNT" property="monMaxOutCnt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_IN_CNT" property="monMaxInCnt" jdbcType="DECIMAL" />
+        <result column="MON_MAX_CASH_CNT" property="monMaxCashCnt" jdbcType="DECIMAL" />
+        <result column="LAST_TXN_DATE" property="lastTxnDate" jdbcType="VARCHAR" />
+        <result column="LAST_TXN_TIME" property="lastTxnTime" jdbcType="VARCHAR" />
+        <result column="INPUTDATE" property="inputdate" jdbcType="VARCHAR" />
+        <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="VARCHAR" />
+        <result column="ASSURE_AMT" property="assureAmt" jdbcType="DECIMAL" />
+        <result column="OVER_AMT" property="overAmt" jdbcType="DECIMAL" />
+        <result column="OTHER_AMT" property="otherAmt" jdbcType="DECIMAL" />
+        <result column="LAST_TXN_AMT" property="lastTxnAmt" jdbcType="DECIMAL" />
+        <result column="INIT_PASSWORD" property="initPassword" jdbcType="VARCHAR" />
+        <result column="TXN_PASSWORD" property="txnPassword" jdbcType="VARCHAR" />
+        <result column="IF_PWD_MODIFY" property="ifPwdModify" jdbcType="CHAR" />
+        <result column="PWD_ERR_NUMS" property="pwdErrNums" jdbcType="VARCHAR" />
+        <result column="PWD_ERR_LOCK_TIME" property="pwdErrLockTime" jdbcType="VARCHAR" />
+        <result column="MODULUS" property="modulus" jdbcType="VARCHAR" />
+        <result column="EXPONENT" property="exponent" jdbcType="VARCHAR" />
+        
+    </resultMap>
+    <sql id="Base_Column_List" >
+        ACCOUNT_NO, ACCOUNT_NAME, IS_REALNAME, CUSTOMER_NO, OPEN_DATE, CLOSE_DATE, VALID_DATE, 
+        CURR_CODE, STATUS, ACCTYPE, OPEN_CHANNEL, STORE_NO, NETABBR, MCHNT_NO, MCHNT_ABBR, 
+        ACQ_INST_CODE, IF_ONETIME_USE, MANAGE_AMT, BALANCE, AVAILABLE_BALANCE, WITHDRAW_BALANCE, 
+        FROZEN_AMOUNT, PREAUTHORIZED_AMOUNT, LAST_DAY_BAL, LAST_MONTH_BAL, DAY_SUM_CONS_AMT, 
+        DAY_SUM_CONS_CNT, DAY_SUM_OUT_AMT, DAY_SUM_OUT_CNT, DAY_SUM_IN_AMT, DAY_SUM_IN_CNT, 
+        DAY_SUM_CASH_AMT, DAY_SUM_CASH_CNT, DAY_SUM_CHG_AMT, DAY_SUM_CHG_CNT, MON_SUM_CONS_AMT, 
+        MON_SUM_CONS_CNT, MON_SUM_OUT_AMT, MON_SUM_OUT_CNT, MON_SUM_IN_AMT, MON_SUM_IN_CNT, 
+        MON_SUM_CASH_AMT, MON_SUM_CASH_CNT, MON_SUM_CHG_AMT, MON_SUM_CHG_CNT, ISS_INS_CODE, 
+        ENCRYPTED_MSG, SUM_CONS_AMT, SUM_CONS_CNT, SUM_CHG_AMT, SUM_CHG_CNT, SUM_OUT_AMT, 
+        SUM_OUT_CNT, SUM_IN_AMT, SUM_IN_CNT, SUM_CASH_AMT, SUM_CASH_CNT, PIN_CHK_AMT, REM_AMT, 
+        MAX_CONS_AMT, MAX_SV_AMT, MAX_OUT_AMT, MAX_IN_AMT, MAX_CASH_AMT, DAY_MAX_CONS_AMT, 
+        DAY_MAX_SV_AMT, DAY_MAX_OUT_AMT, DAY_MAX_IN_AMT, DAY_MAX_CASH_AMT, MON_MAX_CONS_AMT, 
+        MON_MAX_SV_AMT, MON_MAX_OUT_AMT, MON_MAX_IN_AMT, MON_MAX_CASH_AMT, DAY_MAX_CONS_CNT, 
+        DAY_MAX_SV_CNT, DAY_MAX_OUT_CNT, DAY_MAX_IN_CNT, DAY_MAX_CASH_CNT, MON_MAX_CONS_CNT, 
+        MON_MAX_SV_CNT, MON_MAX_OUT_CNT, MON_MAX_IN_CNT, MON_MAX_CASH_CNT, LAST_TXN_DATE, 
+        LAST_TXN_TIME, INPUTDATE, LAST_UPDATE_TIME, ASSURE_AMT, OVER_AMT, OTHER_AMT, LAST_TXN_AMT, 
+        INIT_PASSWORD, TXN_PASSWORD,IF_PWD_MODIFY,PWD_ERR_NUMS,PWD_ERR_LOCK_TIME,MODULUS,EXPONENT
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT
+        where ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectOne" resultMap="BaseResultMap" parameterType="map">
+    	select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT
+        <where>
+        	<if test="accountNo != null and accountNo != ''">AND ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR}</if>
+        	<if test="acctype != null and acctype != ''">AND ACCTYPE = #{acctype,jdbcType=CHAR}</if>
+        </where>
+        order by acctype asc
+    </select>
+    
+    <select id="selectByCustNo" resultMap="BaseResultMap" parameterType="map">
+    	select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT
+        <where>
+        	<if test="customerNo != null and customerNo != ''">AND CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR}</if>
+        	<if test="acctype != null and acctype != ''">AND ACCTYPE = #{acctype,jdbcType=CHAR}</if>
+        </where>
+        order by acctype asc
+    </select>
+    
+    <delete id="delete" parameterType="map" >
+        delete from T_INFO_ACCOUNT
+        where ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="jieyi.accservice.form.TInfoAccount" >
+        insert into T_INFO_ACCOUNT
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="accountNo != null" >
+                ACCOUNT_NO,
+            </if>
+            <if test="accountName != null" >
+                ACCOUNT_NAME,
+            </if>
+            <if test="isRealname != null" >
+                IS_REALNAME,
+            </if>
+            <if test="customerNo != null" >
+                CUSTOMER_NO,
+            </if>
+            <if test="openDate != null" >
+                OPEN_DATE,
+            </if>
+            <if test="closeDate != null" >
+                CLOSE_DATE,
+            </if>
+            <if test="validDate != null" >
+                VALID_DATE,
+            </if>
+            <if test="currCode != null" >
+                CURR_CODE,
+            </if>
+            <if test="status != null" >
+                STATUS,
+            </if>
+            <if test="acctype != null" >
+                ACCTYPE,
+            </if>
+            <if test="openChannel != null" >
+                OPEN_CHANNEL,
+            </if>
+            <if test="storeNo != null" >
+                STORE_NO,
+            </if>
+            <if test="netabbr != null" >
+                NETABBR,
+            </if>
+            <if test="mchntNo != null" >
+                MCHNT_NO,
+            </if>
+            <if test="mchntAbbr != null" >
+                MCHNT_ABBR,
+            </if>
+            <if test="acqInstCode != null" >
+                ACQ_INST_CODE,
+            </if>
+            <if test="ifOnetimeUse != null" >
+                IF_ONETIME_USE,
+            </if>
+            <if test="manageAmt != null" >
+                MANAGE_AMT,
+            </if>
+            <if test="balance != null" >
+                BALANCE,
+            </if>
+            <if test="availableBalance != null" >
+                AVAILABLE_BALANCE,
+            </if>
+            <if test="withdrawBalance != null" >
+                WITHDRAW_BALANCE,
+            </if>
+            <if test="frozenAmount != null" >
+                FROZEN_AMOUNT,
+            </if>
+            <if test="preauthorizedAmount != null" >
+                PREAUTHORIZED_AMOUNT,
+            </if>
+            <if test="lastDayBal != null" >
+                LAST_DAY_BAL,
+            </if>
+            <if test="lastMonthBal != null" >
+                LAST_MONTH_BAL,
+            </if>
+            <if test="daySumConsAmt != null" >
+                DAY_SUM_CONS_AMT,
+            </if>
+            <if test="daySumConsCnt != null" >
+                DAY_SUM_CONS_CNT,
+            </if>
+            <if test="daySumOutAmt != null" >
+                DAY_SUM_OUT_AMT,
+            </if>
+            <if test="daySumOutCnt != null" >
+                DAY_SUM_OUT_CNT,
+            </if>
+            <if test="daySumInAmt != null" >
+                DAY_SUM_IN_AMT,
+            </if>
+            <if test="daySumInCnt != null" >
+                DAY_SUM_IN_CNT,
+            </if>
+            <if test="daySumCashAmt != null" >
+                DAY_SUM_CASH_AMT,
+            </if>
+            <if test="daySumCashCnt != null" >
+                DAY_SUM_CASH_CNT,
+            </if>
+            <if test="daySumChgAmt != null" >
+                DAY_SUM_CHG_AMT,
+            </if>
+            <if test="daySumChgCnt != null" >
+                DAY_SUM_CHG_CNT,
+            </if>
+            <if test="monSumConsAmt != null" >
+                MON_SUM_CONS_AMT,
+            </if>
+            <if test="monSumConsCnt != null" >
+                MON_SUM_CONS_CNT,
+            </if>
+            <if test="monSumOutAmt != null" >
+                MON_SUM_OUT_AMT,
+            </if>
+            <if test="monSumOutCnt != null" >
+                MON_SUM_OUT_CNT,
+            </if>
+            <if test="monSumInAmt != null" >
+                MON_SUM_IN_AMT,
+            </if>
+            <if test="monSumInCnt != null" >
+                MON_SUM_IN_CNT,
+            </if>
+            <if test="monSumCashAmt != null" >
+                MON_SUM_CASH_AMT,
+            </if>
+            <if test="monSumCashCnt != null" >
+                MON_SUM_CASH_CNT,
+            </if>
+            <if test="monSumChgAmt != null" >
+                MON_SUM_CHG_AMT,
+            </if>
+            <if test="monSumChgCnt != null" >
+                MON_SUM_CHG_CNT,
+            </if>
+            <if test="issInsCode != null" >
+                ISS_INS_CODE,
+            </if>
+            <if test="encryptedMsg != null" >
+                ENCRYPTED_MSG,
+            </if>
+            <if test="sumConsAmt != null" >
+                SUM_CONS_AMT,
+            </if>
+            <if test="sumConsCnt != null" >
+                SUM_CONS_CNT,
+            </if>
+            <if test="sumChgAmt != null" >
+                SUM_CHG_AMT,
+            </if>
+            <if test="sumChgCnt != null" >
+                SUM_CHG_CNT,
+            </if>
+            <if test="sumOutAmt != null" >
+                SUM_OUT_AMT,
+            </if>
+            <if test="sumOutCnt != null" >
+                SUM_OUT_CNT,
+            </if>
+            <if test="sumInAmt != null" >
+                SUM_IN_AMT,
+            </if>
+            <if test="sumInCnt != null" >
+                SUM_IN_CNT,
+            </if>
+            <if test="sumCashAmt != null" >
+                SUM_CASH_AMT,
+            </if>
+            <if test="sumCashCnt != null" >
+                SUM_CASH_CNT,
+            </if>
+            <if test="pinChkAmt != null" >
+                PIN_CHK_AMT,
+            </if>
+            <if test="remAmt != null" >
+                REM_AMT,
+            </if>
+            <if test="maxConsAmt != null" >
+                MAX_CONS_AMT,
+            </if>
+            <if test="maxSvAmt != null" >
+                MAX_SV_AMT,
+            </if>
+            <if test="maxOutAmt != null" >
+                MAX_OUT_AMT,
+            </if>
+            <if test="maxInAmt != null" >
+                MAX_IN_AMT,
+            </if>
+            <if test="maxCashAmt != null" >
+                MAX_CASH_AMT,
+            </if>
+            <if test="dayMaxConsAmt != null" >
+                DAY_MAX_CONS_AMT,
+            </if>
+            <if test="dayMaxSvAmt != null" >
+                DAY_MAX_SV_AMT,
+            </if>
+            <if test="dayMaxOutAmt != null" >
+                DAY_MAX_OUT_AMT,
+            </if>
+            <if test="dayMaxInAmt != null" >
+                DAY_MAX_IN_AMT,
+            </if>
+            <if test="dayMaxCashAmt != null" >
+                DAY_MAX_CASH_AMT,
+            </if>
+            <if test="monMaxConsAmt != null" >
+                MON_MAX_CONS_AMT,
+            </if>
+            <if test="monMaxSvAmt != null" >
+                MON_MAX_SV_AMT,
+            </if>
+            <if test="monMaxOutAmt != null" >
+                MON_MAX_OUT_AMT,
+            </if>
+            <if test="monMaxInAmt != null" >
+                MON_MAX_IN_AMT,
+            </if>
+            <if test="monMaxCashAmt != null" >
+                MON_MAX_CASH_AMT,
+            </if>
+            <if test="dayMaxConsCnt != null" >
+                DAY_MAX_CONS_CNT,
+            </if>
+            <if test="dayMaxSvCnt != null" >
+                DAY_MAX_SV_CNT,
+            </if>
+            <if test="dayMaxOutCnt != null" >
+                DAY_MAX_OUT_CNT,
+            </if>
+            <if test="dayMaxInCnt != null" >
+                DAY_MAX_IN_CNT,
+            </if>
+            <if test="dayMaxCashCnt != null" >
+                DAY_MAX_CASH_CNT,
+            </if>
+            <if test="monMaxConsCnt != null" >
+                MON_MAX_CONS_CNT,
+            </if>
+            <if test="monMaxSvCnt != null" >
+                MON_MAX_SV_CNT,
+            </if>
+            <if test="monMaxOutCnt != null" >
+                MON_MAX_OUT_CNT,
+            </if>
+            <if test="monMaxInCnt != null" >
+                MON_MAX_IN_CNT,
+            </if>
+            <if test="monMaxCashCnt != null" >
+                MON_MAX_CASH_CNT,
+            </if>
+            <if test="lastTxnDate != null" >
+                LAST_TXN_DATE,
+            </if>
+            <if test="lastTxnTime != null" >
+                LAST_TXN_TIME,
+            </if>
+            <if test="inputdate != null" >
+                INPUTDATE,
+            </if>
+            <if test="lastUpdateTime != null" >
+                LAST_UPDATE_TIME,
+            </if>
+            <if test="assureAmt != null" >
+                ASSURE_AMT,
+            </if>
+            <if test="overAmt != null" >
+                OVER_AMT,
+            </if>
+            <if test="otherAmt != null" >
+                OTHER_AMT,
+            </if>
+            <if test="lastTxnAmt != null" >
+                LAST_TXN_AMT,
+            </if>
+            <if test="closePermit != null" >
+                CLOSE_PERMIT,
+            </if>
+            <if test="closeCashPermit != null" >
+                CLOSE_CASH_PERMIT,
+            </if>
+            <if test="modulus != null" >
+                MODULUS,
+            </if>
+            <if test="exponent != null" >
+                EXPONENT,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="accountNo != null" >
+                #{accountNo,jdbcType=VARCHAR},
+            </if>
+            <if test="accountName != null" >
+                #{accountName,jdbcType=VARCHAR},
+            </if>
+            <if test="isRealname != null" >
+                #{isRealname,jdbcType=CHAR},
+            </if>
+            <if test="customerNo != null" >
+                #{customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="openDate != null" >
+                #{openDate,jdbcType=CHAR},
+            </if>
+            <if test="closeDate != null" >
+                #{closeDate,jdbcType=CHAR},
+            </if>
+            <if test="validDate != null" >
+                #{validDate,jdbcType=CHAR},
+            </if>
+            <if test="currCode != null" >
+                #{currCode,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=CHAR},
+            </if>
+            <if test="acctype != null" >
+                #{acctype,jdbcType=CHAR},
+            </if>
+            <if test="openChannel != null" >
+                #{openChannel,jdbcType=CHAR},
+            </if>
+            <if test="storeNo != null" >
+                #{storeNo,jdbcType=VARCHAR},
+            </if>
+            <if test="netabbr != null" >
+                #{netabbr,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntNo != null" >
+                #{mchntNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntAbbr != null" >
+                #{mchntAbbr,jdbcType=VARCHAR},
+            </if>
+            <if test="acqInstCode != null" >
+                #{acqInstCode,jdbcType=VARCHAR},
+            </if>
+            <if test="ifOnetimeUse != null" >
+                #{ifOnetimeUse,jdbcType=CHAR},
+            </if>
+            <if test="manageAmt != null" >
+                #{manageAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="balance != null" >
+                #{balance,jdbcType=DECIMAL},
+            </if>
+            <if test="availableBalance != null" >
+                #{availableBalance,jdbcType=DECIMAL},
+            </if>
+            <if test="withdrawBalance != null" >
+                #{withdrawBalance,jdbcType=DECIMAL},
+            </if>
+            <if test="frozenAmount != null" >
+                #{frozenAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="preauthorizedAmount != null" >
+                #{preauthorizedAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="lastDayBal != null" >
+                #{lastDayBal,jdbcType=DECIMAL},
+            </if>
+            <if test="lastMonthBal != null" >
+                #{lastMonthBal,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumConsAmt != null" >
+                #{daySumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumConsCnt != null" >
+                #{daySumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumOutAmt != null" >
+                #{daySumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumOutCnt != null" >
+                #{daySumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumInAmt != null" >
+                #{daySumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumInCnt != null" >
+                #{daySumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumCashAmt != null" >
+                #{daySumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumCashCnt != null" >
+                #{daySumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumChgAmt != null" >
+                #{daySumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumChgCnt != null" >
+                #{daySumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumConsAmt != null" >
+                #{monSumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumConsCnt != null" >
+                #{monSumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumOutAmt != null" >
+                #{monSumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumOutCnt != null" >
+                #{monSumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumInAmt != null" >
+                #{monSumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumInCnt != null" >
+                #{monSumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumCashAmt != null" >
+                #{monSumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumCashCnt != null" >
+                #{monSumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumChgAmt != null" >
+                #{monSumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumChgCnt != null" >
+                #{monSumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="issInsCode != null" >
+                #{issInsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="encryptedMsg != null" >
+                #{encryptedMsg,jdbcType=VARCHAR},
+            </if>
+            <if test="sumConsAmt != null" >
+                #{sumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumConsCnt != null" >
+                #{sumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumChgAmt != null" >
+                #{sumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumChgCnt != null" >
+                #{sumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumOutAmt != null" >
+                #{sumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumOutCnt != null" >
+                #{sumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumInAmt != null" >
+                #{sumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumInCnt != null" >
+                #{sumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumCashAmt != null" >
+                #{sumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumCashCnt != null" >
+                #{sumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="pinChkAmt != null" >
+                #{pinChkAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="remAmt != null" >
+                #{remAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxConsAmt != null" >
+                #{maxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxSvAmt != null" >
+                #{maxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxOutAmt != null" >
+                #{maxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxInAmt != null" >
+                #{maxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxCashAmt != null" >
+                #{maxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxConsAmt != null" >
+                #{dayMaxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxSvAmt != null" >
+                #{dayMaxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxOutAmt != null" >
+                #{dayMaxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxInAmt != null" >
+                #{dayMaxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxCashAmt != null" >
+                #{dayMaxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxConsAmt != null" >
+                #{monMaxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxSvAmt != null" >
+                #{monMaxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxOutAmt != null" >
+                #{monMaxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxInAmt != null" >
+                #{monMaxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxCashAmt != null" >
+                #{monMaxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxConsCnt != null" >
+                #{dayMaxConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxSvCnt != null" >
+                #{dayMaxSvCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxOutCnt != null" >
+                #{dayMaxOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxInCnt != null" >
+                #{dayMaxInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxCashCnt != null" >
+                #{dayMaxCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxConsCnt != null" >
+                #{monMaxConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxSvCnt != null" >
+                #{monMaxSvCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxOutCnt != null" >
+                #{monMaxOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxInCnt != null" >
+                #{monMaxInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxCashCnt != null" >
+                #{monMaxCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="lastTxnDate != null" >
+                #{lastTxnDate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastTxnTime != null" >
+                #{lastTxnTime,jdbcType=VARCHAR},
+            </if>
+            <if test="inputdate != null" >
+                #{inputdate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null" >
+                #{lastUpdateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="assureAmt != null" >
+                #{assureAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="overAmt != null" >
+                #{overAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="otherAmt != null" >
+                #{otherAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="lastTxnAmt != null" >
+                #{lastTxnAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="closePermit != null" >
+                #{closePermit,jdbcType=VARCHAR},
+            </if>
+            <if test="closeCashPermit != null" >
+                #{closeCashPermit,jdbcType=VARCHAR},
+            </if>
+            <if test="modulus != null" >
+                #{modulus,jdbcType=VARCHAR},
+            </if>
+            <if test="exponent != null" >
+                #{exponent,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="jieyi.accservice.form.TInfoAccount" >
+        update T_INFO_ACCOUNT
+        <set >
+            <if test="accountName != null" >
+                ACCOUNT_NAME = #{accountName,jdbcType=VARCHAR},
+            </if>
+            <if test="isRealname != null" >
+                IS_REALNAME = #{isRealname,jdbcType=CHAR},
+            </if>
+            <if test="customerNo != null" >
+                CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="openDate != null" >
+                OPEN_DATE = #{openDate,jdbcType=CHAR},
+            </if>
+            <if test="closeDate != null" >
+                CLOSE_DATE = #{closeDate,jdbcType=CHAR},
+            </if>
+            <if test="validDate != null" >
+                VALID_DATE = #{validDate,jdbcType=CHAR},
+            </if>
+            <if test="currCode != null" >
+                CURR_CODE = #{currCode,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                STATUS = #{status,jdbcType=CHAR},
+            </if>
+            <if test="acctype != null" >
+                ACCTYPE = #{acctype,jdbcType=CHAR},
+            </if>
+            <if test="openChannel != null" >
+                OPEN_CHANNEL = #{openChannel,jdbcType=CHAR},
+            </if>
+            <if test="storeNo != null" >
+                STORE_NO = #{storeNo,jdbcType=VARCHAR},
+            </if>
+            <if test="netabbr != null" >
+                NETABBR = #{netabbr,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntNo != null" >
+                MCHNT_NO = #{mchntNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntAbbr != null" >
+                MCHNT_ABBR = #{mchntAbbr,jdbcType=VARCHAR},
+            </if>
+            <if test="acqInstCode != null" >
+                ACQ_INST_CODE = #{acqInstCode,jdbcType=VARCHAR},
+            </if>
+            <if test="ifOnetimeUse != null" >
+                IF_ONETIME_USE = #{ifOnetimeUse,jdbcType=CHAR},
+            </if>
+            <if test="manageAmt != null" >
+                MANAGE_AMT = #{manageAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="balance != null" >
+                BALANCE = #{balance,jdbcType=DECIMAL},
+            </if>
+            <if test="availableBalance != null" >
+                AVAILABLE_BALANCE = #{availableBalance,jdbcType=DECIMAL},
+            </if>
+            <if test="withdrawBalance != null" >
+                WITHDRAW_BALANCE = #{withdrawBalance,jdbcType=DECIMAL},
+            </if>
+            <if test="frozenAmount != null" >
+                FROZEN_AMOUNT = #{frozenAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="preauthorizedAmount != null" >
+                PREAUTHORIZED_AMOUNT = #{preauthorizedAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="lastDayBal != null" >
+                LAST_DAY_BAL = #{lastDayBal,jdbcType=DECIMAL},
+            </if>
+            <if test="lastMonthBal != null" >
+                LAST_MONTH_BAL = #{lastMonthBal,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumConsAmt != null" >
+                DAY_SUM_CONS_AMT = #{daySumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumConsCnt != null" >
+                DAY_SUM_CONS_CNT = #{daySumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumOutAmt != null" >
+                DAY_SUM_OUT_AMT = #{daySumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumOutCnt != null" >
+                DAY_SUM_OUT_CNT = #{daySumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumInAmt != null" >
+                DAY_SUM_IN_AMT = #{daySumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumInCnt != null" >
+                DAY_SUM_IN_CNT = #{daySumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumCashAmt != null" >
+                DAY_SUM_CASH_AMT = #{daySumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumCashCnt != null" >
+                DAY_SUM_CASH_CNT = #{daySumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumChgAmt != null" >
+                DAY_SUM_CHG_AMT = #{daySumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="daySumChgCnt != null" >
+                DAY_SUM_CHG_CNT = #{daySumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumConsAmt != null" >
+                MON_SUM_CONS_AMT = #{monSumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumConsCnt != null" >
+                MON_SUM_CONS_CNT = #{monSumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumOutAmt != null" >
+                MON_SUM_OUT_AMT = #{monSumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumOutCnt != null" >
+                MON_SUM_OUT_CNT = #{monSumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumInAmt != null" >
+                MON_SUM_IN_AMT = #{monSumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumInCnt != null" >
+                MON_SUM_IN_CNT = #{monSumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumCashAmt != null" >
+                MON_SUM_CASH_AMT = #{monSumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumCashCnt != null" >
+                MON_SUM_CASH_CNT = #{monSumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumChgAmt != null" >
+                MON_SUM_CHG_AMT = #{monSumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monSumChgCnt != null" >
+                MON_SUM_CHG_CNT = #{monSumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="issInsCode != null" >
+                ISS_INS_CODE = #{issInsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="encryptedMsg != null" >
+                ENCRYPTED_MSG = #{encryptedMsg,jdbcType=VARCHAR},
+            </if>
+            <if test="sumConsAmt != null" >
+                SUM_CONS_AMT = #{sumConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumConsCnt != null" >
+                SUM_CONS_CNT = #{sumConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumChgAmt != null" >
+                SUM_CHG_AMT = #{sumChgAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumChgCnt != null" >
+                SUM_CHG_CNT = #{sumChgCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumOutAmt != null" >
+                SUM_OUT_AMT = #{sumOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumOutCnt != null" >
+                SUM_OUT_CNT = #{sumOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumInAmt != null" >
+                SUM_IN_AMT = #{sumInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumInCnt != null" >
+                SUM_IN_CNT = #{sumInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumCashAmt != null" >
+                SUM_CASH_AMT = #{sumCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="sumCashCnt != null" >
+                SUM_CASH_CNT = #{sumCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="pinChkAmt != null" >
+                PIN_CHK_AMT = #{pinChkAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="remAmt != null" >
+                REM_AMT = #{remAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxConsAmt != null" >
+                MAX_CONS_AMT = #{maxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxSvAmt != null" >
+                MAX_SV_AMT = #{maxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxOutAmt != null" >
+                MAX_OUT_AMT = #{maxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxInAmt != null" >
+                MAX_IN_AMT = #{maxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="maxCashAmt != null" >
+                MAX_CASH_AMT = #{maxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxConsAmt != null" >
+                DAY_MAX_CONS_AMT = #{dayMaxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxSvAmt != null" >
+                DAY_MAX_SV_AMT = #{dayMaxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxOutAmt != null" >
+                DAY_MAX_OUT_AMT = #{dayMaxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxInAmt != null" >
+                DAY_MAX_IN_AMT = #{dayMaxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxCashAmt != null" >
+                DAY_MAX_CASH_AMT = #{dayMaxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxConsAmt != null" >
+                MON_MAX_CONS_AMT = #{monMaxConsAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxSvAmt != null" >
+                MON_MAX_SV_AMT = #{monMaxSvAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxOutAmt != null" >
+                MON_MAX_OUT_AMT = #{monMaxOutAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxInAmt != null" >
+                MON_MAX_IN_AMT = #{monMaxInAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxCashAmt != null" >
+                MON_MAX_CASH_AMT = #{monMaxCashAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxConsCnt != null" >
+                DAY_MAX_CONS_CNT = #{dayMaxConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxSvCnt != null" >
+                DAY_MAX_SV_CNT = #{dayMaxSvCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxOutCnt != null" >
+                DAY_MAX_OUT_CNT = #{dayMaxOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxInCnt != null" >
+                DAY_MAX_IN_CNT = #{dayMaxInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="dayMaxCashCnt != null" >
+                DAY_MAX_CASH_CNT = #{dayMaxCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxConsCnt != null" >
+                MON_MAX_CONS_CNT = #{monMaxConsCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxSvCnt != null" >
+                MON_MAX_SV_CNT = #{monMaxSvCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxOutCnt != null" >
+                MON_MAX_OUT_CNT = #{monMaxOutCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxInCnt != null" >
+                MON_MAX_IN_CNT = #{monMaxInCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="monMaxCashCnt != null" >
+                MON_MAX_CASH_CNT = #{monMaxCashCnt,jdbcType=DECIMAL},
+            </if>
+            <if test="lastTxnDate != null" >
+                LAST_TXN_DATE = #{lastTxnDate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastTxnTime != null" >
+                LAST_TXN_TIME = #{lastTxnTime,jdbcType=VARCHAR},
+            </if>
+            <if test="inputdate != null" >
+                INPUTDATE = #{inputdate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null" >
+                LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="assureAmt != null" >
+                ASSURE_AMT = #{assureAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="overAmt != null" >
+                OVER_AMT = #{overAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="otherAmt != null" >
+                OTHER_AMT = #{otherAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="lastTxnAmt != null" >
+                LAST_TXN_AMT = #{lastTxnAmt,jdbcType=DECIMAL},
+            </if>
+            <if test="closePermit != null" >
+                CLOSE_PERMIT = #{closePermit,jdbcType=VARCHAR},
+            </if>
+            <if test="closeCashPermit != null" >
+                CLOSE_CASH_PERMIT = #{closeCashPermit,jdbcType=VARCHAR},
+            </if>
+            <if test="modulus != null" >
+                MODULUS = #{modulus,jdbcType=VARCHAR},
+            </if>
+            <if test="exponent != null" >
+                EXPONENT = #{exponent,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR}
+    </update>
+</mapper>

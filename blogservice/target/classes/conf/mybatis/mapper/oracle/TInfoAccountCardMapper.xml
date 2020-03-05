@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TInfoAccountCardMapper" >
+    <resultMap id="BaseResultMap" type="jieyi.accservice.form.TInfoAccountCard" >
+        <id column="RECORD_NO" property="recordNo" jdbcType="VARCHAR" />
+        <result column="CARD_NO" property="cardNo" jdbcType="VARCHAR" />
+        <result column="ACCTYPE" property="acctype" jdbcType="CHAR" />
+        <result column="ACCOUNT_NO" property="accountNo" jdbcType="VARCHAR" />
+        <result column="BINDING_FLAG" property="bindingFlag" jdbcType="CHAR" />
+        <result column="BINDING_MEHOD" property="bindingMehod" jdbcType="CHAR" />
+        <result column="MAIN_CARD_NO" property="mainCardNo" jdbcType="VARCHAR" />
+        <result column="MAIN_CUSTOMER_NO" property="mainCustomerNo" jdbcType="VARCHAR" />
+        <result column="BINDING_TIME" property="bindingTime" jdbcType="VARCHAR" />
+        <result column="UNBINDING_TIME" property="unbindingTime" jdbcType="VARCHAR" />
+        <result column="BIND_SHOP_ID" property="bindShopId" jdbcType="VARCHAR" />
+        <result column="BIND_OPR_ID" property="bindOprId" jdbcType="VARCHAR" />
+        <result column="UNBIND_SHOP_ID" property="unbindShopId" jdbcType="VARCHAR" />
+        <result column="UNBIND_OPR_ID" property="unbindOprId" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        RECORD_NO, CARD_NO, ACCTYPE, ACCOUNT_NO, BINDING_FLAG, BINDING_MEHOD, MAIN_CARD_NO, 
+        MAIN_CUSTOMER_NO, BINDING_TIME, UNBINDING_TIME, BIND_SHOP_ID, BIND_OPR_ID, UNBIND_SHOP_ID, 
+        UNBIND_OPR_ID
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT_CARD
+        where RECORD_NO = #{recordNo,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="isLargeCard" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT_CARD
+        where MAIN_CARD_NO = #{mainCardNo,jdbcType=VARCHAR} or CARD_NO = #{mainCardNo,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectByCardNo" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT_CARD
+        where CARD_NO = #{cardNo,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectAccount" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT_CARD
+        where CARD_NO = #{cardNo,jdbcType=VARCHAR}
+    </select>
+    
+    
+     <select id="selectByCustomerNo" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_ACCOUNT_CARD
+        where MAIN_CUSTOMER_NO in ${mainCustomerNo}
+        order by ACCTYPE asc
+    </select>
+    
+    <delete id="delete" parameterType="map" >
+        delete from T_INFO_ACCOUNT_CARD
+        where RECORD_NO = #{recordNo,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="jieyi.accservice.form.TInfoAccountCard" >
+        insert into T_INFO_ACCOUNT_CARD
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="recordNo != null" >
+                RECORD_NO,
+            </if>
+            <if test="cardNo != null" >
+                CARD_NO,
+            </if>
+            <if test="acctype != null" >
+                ACCTYPE,
+            </if>
+            <if test="accountNo != null" >
+                ACCOUNT_NO,
+            </if>
+            <if test="bindingFlag != null" >
+                BINDING_FLAG,
+            </if>
+            <if test="bindingMehod != null" >
+                BINDING_MEHOD,
+            </if>
+            <if test="mainCardNo != null" >
+                MAIN_CARD_NO,
+            </if>
+            <if test="mainCustomerNo != null" >
+                MAIN_CUSTOMER_NO,
+            </if>
+            <if test="bindingTime != null" >
+                BINDING_TIME,
+            </if>
+            <if test="unbindingTime != null" >
+                UNBINDING_TIME,
+            </if>
+            <if test="bindShopId != null" >
+                BIND_SHOP_ID,
+            </if>
+            <if test="bindOprId != null" >
+                BIND_OPR_ID,
+            </if>
+            <if test="unbindShopId != null" >
+                UNBIND_SHOP_ID,
+            </if>
+            <if test="unbindOprId != null" >
+                UNBIND_OPR_ID,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="recordNo != null" >
+                #{recordNo,jdbcType=VARCHAR},
+            </if>
+            <if test="cardNo != null" >
+                #{cardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="acctype != null" >
+                #{acctype,jdbcType=CHAR},
+            </if>
+            <if test="accountNo != null" >
+                #{accountNo,jdbcType=VARCHAR},
+            </if>
+            <if test="bindingFlag != null" >
+                #{bindingFlag,jdbcType=CHAR},
+            </if>
+            <if test="bindingMehod != null" >
+                #{bindingMehod,jdbcType=CHAR},
+            </if>
+            <if test="mainCardNo != null" >
+                #{mainCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mainCustomerNo != null" >
+                #{mainCustomerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="bindingTime != null" >
+                #{bindingTime,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindingTime != null" >
+                #{unbindingTime,jdbcType=VARCHAR},
+            </if>
+            <if test="bindShopId != null" >
+                #{bindShopId,jdbcType=VARCHAR},
+            </if>
+            <if test="bindOprId != null" >
+                #{bindOprId,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindShopId != null" >
+                #{unbindShopId,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindOprId != null" >
+                #{unbindOprId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="jieyi.accservice.form.TInfoAccountCard" >
+        update T_INFO_ACCOUNT_CARD
+        <set >
+            <if test="cardNo != null" >
+                CARD_NO = #{cardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="acctype != null" >
+                ACCTYPE = #{acctype,jdbcType=CHAR},
+            </if>
+            <if test="accountNo != null" >
+                ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR},
+            </if>
+            <if test="bindingFlag != null" >
+                BINDING_FLAG = #{bindingFlag,jdbcType=CHAR},
+            </if>
+            <if test="bindingMehod != null" >
+                BINDING_MEHOD = #{bindingMehod,jdbcType=CHAR},
+            </if>
+            <if test="mainCardNo != null" >
+                MAIN_CARD_NO = #{mainCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mainCustomerNo != null" >
+                MAIN_CUSTOMER_NO = #{mainCustomerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="bindingTime != null" >
+                BINDING_TIME = #{bindingTime,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindingTime != null" >
+                UNBINDING_TIME = #{unbindingTime,jdbcType=VARCHAR},
+            </if>
+            <if test="bindShopId != null" >
+                BIND_SHOP_ID = #{bindShopId,jdbcType=VARCHAR},
+            </if>
+            <if test="bindOprId != null" >
+                BIND_OPR_ID = #{bindOprId,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindShopId != null" >
+                UNBIND_SHOP_ID = #{unbindShopId,jdbcType=VARCHAR},
+            </if>
+            <if test="unbindOprId != null" >
+                UNBIND_OPR_ID = #{unbindOprId,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where RECORD_NO = #{recordNo,jdbcType=VARCHAR}
+    </update>
+</mapper>

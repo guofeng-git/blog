@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jieyi.accservice.dao.TParAccTypeMapper">
+  <resultMap id="BaseResultMap" type="jieyi.accservice.form.TParAccType">
+    <id column="ACCTYPE" jdbcType="CHAR" property="acctype" />
+    <result column="ATTCLASS" jdbcType="CHAR" property="attclass" />
+    <result column="TYPENAME" jdbcType="VARCHAR" property="typename" />
+    <result column="TYPEDESC" jdbcType="VARCHAR" property="typedesc" />
+    <result column="OUT_AMT_PER" jdbcType="CHAR" property="outAmtPer" />
+    <result column="CANCELL_PER" jdbcType="CHAR" property="cancellPer" />
+    <result column="INIT_SV_AMT" jdbcType="DECIMAL" property="initSvAmt" />
+    <result column="SV_BASE_AMT" jdbcType="DECIMAL" property="svBaseAmt" />
+    <result column="MAX_CONS_AMT" jdbcType="DECIMAL" property="maxConsAmt" />
+    <result column="MAX_SV_AMT" jdbcType="DECIMAL" property="maxSvAmt" />
+    <result column="MAX_OUT_AMT" jdbcType="DECIMAL" property="maxOutAmt" />
+    <result column="MAX_IN_AMT" jdbcType="DECIMAL" property="maxInAmt" />
+    <result column="MAX_CASH_AMT" jdbcType="DECIMAL" property="maxCashAmt" />
+    <result column="DAY_MAX_CONS_AMT" jdbcType="DECIMAL" property="dayMaxConsAmt" />
+    <result column="DAY_MAX_SV_AMT" jdbcType="DECIMAL" property="dayMaxSvAmt" />
+    <result column="DAY_MAX_OUT_AMT" jdbcType="DECIMAL" property="dayMaxOutAmt" />
+    <result column="DAY_MAX_IN_AMT" jdbcType="DECIMAL" property="dayMaxInAmt" />
+    <result column="DAY_MAX_CASH_AMT" jdbcType="DECIMAL" property="dayMaxCashAmt" />
+    <result column="MON_MAX_CONS_AMT" jdbcType="DECIMAL" property="monMaxConsAmt" />
+    <result column="MON_MAX_SV_AMT" jdbcType="DECIMAL" property="monMaxSvAmt" />
+    <result column="MON_MAX_OUT_AMT" jdbcType="DECIMAL" property="monMaxOutAmt" />
+    <result column="MON_MAX_IN_AMT" jdbcType="DECIMAL" property="monMaxInAmt" />
+    <result column="MON_MAX_CASH_AMT" jdbcType="DECIMAL" property="monMaxCashAmt" />
+    <result column="DAY_MAX_CONS_CNT" jdbcType="DECIMAL" property="dayMaxConsCnt" />
+    <result column="DAY_MAX_SV_CNT" jdbcType="DECIMAL" property="dayMaxSvCnt" />
+    <result column="DAY_MAX_OUT_CNT" jdbcType="DECIMAL" property="dayMaxOutCnt" />
+    <result column="DAY_MAX_IN_CNT" jdbcType="DECIMAL" property="dayMaxInCnt" />
+    <result column="DAY_MAX_CASH_CNT" jdbcType="DECIMAL" property="dayMaxCashCnt" />
+    <result column="MON_MAX_CONS_CNT" jdbcType="DECIMAL" property="monMaxConsCnt" />
+    <result column="MON_MAX_SV_CNT" jdbcType="DECIMAL" property="monMaxSvCnt" />
+    <result column="MON_MAX_OUT_CNT" jdbcType="DECIMAL" property="monMaxOutCnt" />
+    <result column="MON_MAX_IN_CNT" jdbcType="DECIMAL" property="monMaxInCnt" />
+    <result column="MON_MAX_CASH_CNT" jdbcType="DECIMAL" property="monMaxCashCnt" />
+    <result column="CREATE_UID" jdbcType="VARCHAR" property="createUid" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="LAST_MODIFY_UID" jdbcType="VARCHAR" property="lastModifyUid" />
+    <result column="LAST_MODIFY_TIME" jdbcType="VARCHAR" property="lastModifyTime" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="NREAL_OPEN_PER" jdbcType="CHAR" property="nrealOpenPer" />
+    <result column="CIR_SAVE_PER" jdbcType="CHAR" property="cirSavePer" />
+    <result column="REAL_MAX_ACC_BAL" jdbcType="DECIMAL" property="realMaxAccBal" />
+    <result column="NREAL_MAX_ACC_BAL" jdbcType="DECIMAL" property="nrealMaxAccBal" />
+    <result column="REAL_MAX_SV_AMT" jdbcType="DECIMAL" property="realMaxSvAmt" />
+    <result column="NREAL_MAX_SV_AMT" jdbcType="DECIMAL" property="nrealMaxSvAmt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ACCTYPE, ATTCLASS, TYPENAME, TYPEDESC, OUT_AMT_PER, CANCELL_PER, INIT_SV_AMT, SV_BASE_AMT, 
+    MAX_CONS_AMT, MAX_SV_AMT, MAX_OUT_AMT, MAX_IN_AMT, MAX_CASH_AMT, DAY_MAX_CONS_AMT, 
+    DAY_MAX_SV_AMT, DAY_MAX_OUT_AMT, DAY_MAX_IN_AMT, DAY_MAX_CASH_AMT, MON_MAX_CONS_AMT, 
+    MON_MAX_SV_AMT, MON_MAX_OUT_AMT, MON_MAX_IN_AMT, MON_MAX_CASH_AMT, DAY_MAX_CONS_CNT, 
+    DAY_MAX_SV_CNT, DAY_MAX_OUT_CNT, DAY_MAX_IN_CNT, DAY_MAX_CASH_CNT, MON_MAX_CONS_CNT, 
+    MON_MAX_SV_CNT, MON_MAX_OUT_CNT, MON_MAX_IN_CNT, MON_MAX_CASH_CNT, CREATE_UID, CREATE_TIME, 
+    LAST_MODIFY_UID, LAST_MODIFY_TIME, STATUS, NREAL_OPEN_PER, CIR_SAVE_PER, REAL_MAX_ACC_BAL, 
+    NREAL_MAX_ACC_BAL, REAL_MAX_SV_AMT, NREAL_MAX_SV_AMT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_PAR_ACC_TYPE
+    where ACCTYPE = #{acctype,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_PAR_ACC_TYPE
+    </select>
+  
+</mapper>

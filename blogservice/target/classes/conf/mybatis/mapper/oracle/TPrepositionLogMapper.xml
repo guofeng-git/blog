@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TPrepositionLogMapper" >
+  <resultMap id="BaseResultMap" type="jieyi.accservice.form.TPrepositionLog" >
+    <id column="TXNCODE" property="txncode" jdbcType="VARCHAR" />
+    <id column="SYSSESQ" property="syssesq" jdbcType="VARCHAR" />
+    <id column="REQSEQ" property="reqseq" jdbcType="VARCHAR" />
+    <result column="CARDNO" property="cardno" jdbcType="VARCHAR" />
+    <result column="INSTID" property="instid" jdbcType="VARCHAR" />
+    <result column="MCHNTID" property="mchntid" jdbcType="VARCHAR" />
+    <result column="TERMID" property="termid" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="TXNDATE" property="txndate" jdbcType="VARCHAR" />
+    <result column="TXNTIME" property="txntime" jdbcType="VARCHAR" />
+    <result column="REQSETTDATE" property="reqsettdate" jdbcType="VARCHAR" />
+    <result column="CARDDATE" property="carddate" jdbcType="VARCHAR" />
+    <result column="CARDTIME" property="cardtime" jdbcType="VARCHAR" />
+    <result column="ORGTXNDATE" property="orgtxndate" jdbcType="VARCHAR" />
+    <result column="CITY" property="city" jdbcType="VARCHAR" />
+    <result column="CARDFEE" property="cardfee" jdbcType="DECIMAL" />
+    <result column="RANDOM" property="random" jdbcType="VARCHAR" />
+    <result column="TXNTERMID" property="txntermid" jdbcType="VARCHAR" />
+    <result column="MAC2" property="mac2" jdbcType="VARCHAR" />
+    <result column="ATTACH" property="attach" jdbcType="VARCHAR" />
+    <result column="CERTIFID" property="certifid" jdbcType="VARCHAR" />
+    <result column="CARDDEPOSIT" property="carddeposit" jdbcType="DECIMAL" />
+    <result column="REQORDERID" property="reqorderid" jdbcType="VARCHAR" />
+    <result column="BALANCE" property="balance" jdbcType="DECIMAL" />
+    <result column="REFNO" property="refno" jdbcType="VARCHAR" />
+    <result column="ORGSYSSESQ" property="orgsyssesq" jdbcType="VARCHAR" />
+    <result column="OPRRESULT" property="oprresult" jdbcType="VARCHAR" />
+    <result column="AFTERAMT" property="afteramt" jdbcType="DECIMAL" />
+    <result column="TAC" property="tac" jdbcType="VARCHAR" />
+    <result column="LSTAPDUNUM" property="lstapdunum" jdbcType="VARCHAR" />
+    <result column="LSTAPDULIST" property="lstapdulist" jdbcType="VARCHAR" />
+    <result column="ORDID" property="ordid" jdbcType="VARCHAR" />
+    <result column="ORGORDID" property="orgordid" jdbcType="VARCHAR" />
+    <result column="PAYORDID" property="payordid" jdbcType="VARCHAR" />
+    <result column="VOUCHERNO" property="voucherno" jdbcType="VARCHAR" />
+    <result column="APDUNUM" property="apdunum" jdbcType="VARCHAR" />
+    <result column="APDULIST" property="apdulist" jdbcType="VARCHAR" />
+    <result column="BEFAMT" property="befamt" jdbcType="DECIMAL" />
+    <result column="SETTDATE" property="settdate" jdbcType="VARCHAR" />
+    <result column="IFPIN" property="ifpin" jdbcType="VARCHAR" />
+    <result column="PINCHKAMT" property="pinchkamt" jdbcType="DECIMAL" />
+    <result column="REMINDAMT" property="remindamt" jdbcType="DECIMAL" />
+    <result column="IFREALNAME" property="ifrealname" jdbcType="VARCHAR" />
+    <result column="HOLDNAME" property="holdname" jdbcType="VARCHAR" />
+    <result column="HOLDTYPE" property="holdtype" jdbcType="VARCHAR" />
+    <result column="HOLDNO" property="holdno" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="CHANGEFLAG" property="changeflag" jdbcType="VARCHAR" />
+    <result column="NEWPASSWORD" property="newpassword" jdbcType="VARCHAR" />
+    <result column="POSSYS_DATE" property="possysDate" jdbcType="VARCHAR" />
+    <result column="CARDBAL" property="cardbal" jdbcType="DECIMAL" />
+    <result column="TXN_AMT" property="txnAmt" jdbcType="DECIMAL" />
+    <result column="REQDATE" property="reqdate" jdbcType="VARCHAR" />
+    <result column="REQTIME" property="reqtime" jdbcType="VARCHAR" />
+    <result column="UPSTATION" property="upstation" jdbcType="VARCHAR" />
+    <result column="UPTIME" property="uptime" jdbcType="VARCHAR" />
+    <result column="DOWNSTATION" property="downstation" jdbcType="VARCHAR" />
+    <result column="DOWNTIME" property="downtime" jdbcType="VARCHAR" />
+    <result column="PSAM_ID" property="psamId" jdbcType="VARCHAR" />
+    <result column="TXNSEQ" property="txnseq" jdbcType="VARCHAR" />
+    <result column="BEFBAL" property="befbal" jdbcType="DECIMAL" />
+    <result column="TXNAMT" property="txnamt" jdbcType="DECIMAL" />
+    <result column="CARDFACENO" property="cardfaceno" jdbcType="VARCHAR" />
+    <result column="PAY_STATUS" property="payStatus" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_NO" property="customerNo" jdbcType="VARCHAR" />
+    <result column="PRIVDATA" property="privdata" jdbcType="VARCHAR" />
+    <result column="LAST_SUCC_TIME" property="lastSuccTime" jdbcType="VARCHAR" />
+    <result column="POSVER" property="posver" jdbcType="VARCHAR" />
+    <result column="WLVER" property="wlver" jdbcType="VARCHAR" />
+    <result column="BLVER" property="blver" jdbcType="VARCHAR" />
+    <result column="CARDVER" property="cardver" jdbcType="VARCHAR" />
+    <result column="PJVER" property="pjver" jdbcType="VARCHAR" />
+    <result column="TXNNUM" property="txnnum" jdbcType="DECIMAL" />
+    <result column="POSRTD" property="posrtd" jdbcType="VARCHAR" />
+    <result column="POSLTD" property="posltd" jdbcType="VARCHAR" />
+    <result column="RESPONSECODE" property="responsecode" jdbcType="VARCHAR" />
+    <result column="RESPONSEDESC" property="responsedesc" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="VARCHAR" />
+    <result column="RSVD1" property="rsvd1" jdbcType="VARCHAR" />
+    <result column="RSVD2" property="rsvd2" jdbcType="VARCHAR" />
+    <result column="RSVD3" property="rsvd3" jdbcType="VARCHAR" />
+    <result column="RSVD4" property="rsvd4" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    TXNCODE, SYSSESQ, REQSEQ, CARDNO, INSTID, MCHNTID, TERMID, PASSWORD, TXNDATE, TXNTIME, 
+    REQSETTDATE, CARDDATE, CARDTIME, ORGTXNDATE, CITY, CARDFEE, RANDOM, TXNTERMID, MAC2, 
+    ATTACH, CERTIFID, CARDDEPOSIT, REQORDERID, BALANCE, REFNO, ORGSYSSESQ, OPRRESULT, 
+    AFTERAMT, TAC, LSTAPDUNUM, LSTAPDULIST, ORDID, ORGORDID, PAYORDID, VOUCHERNO, APDUNUM, 
+    APDULIST, BEFAMT, SETTDATE, IFPIN, PINCHKAMT, REMINDAMT, IFREALNAME, HOLDNAME, HOLDTYPE, 
+    HOLDNO, PHONE, CHANGEFLAG, NEWPASSWORD, POSSYS_DATE, CARDBAL, TXN_AMT, REQDATE, REQTIME, 
+    UPSTATION, UPTIME, DOWNSTATION, DOWNTIME, PSAM_ID, TXNSEQ, BEFBAL, TXNAMT, CARDFACENO, 
+    PAY_STATUS, CUSTOMER_NO, PRIVDATA, LAST_SUCC_TIME, POSVER, WLVER, BLVER, CARDVER, 
+    PJVER, TXNNUM, POSRTD, POSLTD, RESPONSECODE, RESPONSEDESC, CREATE_TIME, UPDATE_TIME, 
+    RSVD1, RSVD2, RSVD3, RSVD4
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="jieyi.accservice.form.TPrepositionLog" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_preposition_log
+    where TXNCODE = #{txncode,jdbcType=VARCHAR}
+      and SYSSESQ = #{syssesq,jdbcType=VARCHAR}
+      and REQSEQ = #{reqseq,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="jieyi.accservice.form.TPrepositionLog" >
+    delete from t_preposition_log
+    where TXNCODE = #{txncode,jdbcType=VARCHAR}
+      and SYSSESQ = #{syssesq,jdbcType=VARCHAR}
+      and REQSEQ = #{reqseq,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="jieyi.accservice.form.TPrepositionLog" >
+    insert into t_preposition_log (TXNCODE, SYSSESQ, REQSEQ, 
+      CARDNO, INSTID, MCHNTID, 
+      TERMID, PASSWORD, TXNDATE, 
+      TXNTIME, REQSETTDATE, CARDDATE, 
+      CARDTIME, ORGTXNDATE, CITY, 
+      CARDFEE, RANDOM, TXNTERMID, 
+      MAC2, ATTACH, CERTIFID, 
+      CARDDEPOSIT, REQORDERID, BALANCE, 
+      REFNO, ORGSYSSESQ, OPRRESULT, 
+      AFTERAMT, TAC, LSTAPDUNUM, 
+      LSTAPDULIST, ORDID, ORGORDID, 
+      PAYORDID, VOUCHERNO, APDUNUM, 
+      APDULIST, BEFAMT, SETTDATE, 
+      IFPIN, PINCHKAMT, REMINDAMT, 
+      IFREALNAME, HOLDNAME, HOLDTYPE, 
+      HOLDNO, PHONE, CHANGEFLAG, 
+      NEWPASSWORD, POSSYS_DATE, CARDBAL, 
+      TXN_AMT, REQDATE, REQTIME, 
+      UPSTATION, UPTIME, DOWNSTATION, 
+      DOWNTIME, PSAM_ID, TXNSEQ, 
+      BEFBAL, TXNAMT, CARDFACENO, 
+      PAY_STATUS, CUSTOMER_NO, PRIVDATA, 
+      LAST_SUCC_TIME, POSVER, WLVER, 
+      BLVER, CARDVER, PJVER, 
+      TXNNUM, POSRTD, POSLTD, 
+      RESPONSECODE, RESPONSEDESC, CREATE_TIME, 
+      UPDATE_TIME, RSVD1, RSVD2, 
+      RSVD3, RSVD4)
+    values (#{txncode,jdbcType=VARCHAR}, #{syssesq,jdbcType=VARCHAR}, #{reqseq,jdbcType=VARCHAR}, 
+      #{cardno,jdbcType=VARCHAR}, #{instid,jdbcType=VARCHAR}, #{mchntid,jdbcType=VARCHAR}, 
+      #{termid,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{txndate,jdbcType=VARCHAR}, 
+      #{txntime,jdbcType=VARCHAR}, #{reqsettdate,jdbcType=VARCHAR}, #{carddate,jdbcType=VARCHAR}, 
+      #{cardtime,jdbcType=VARCHAR}, #{orgtxndate,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{cardfee,jdbcType=DECIMAL}, #{random,jdbcType=VARCHAR}, #{txntermid,jdbcType=VARCHAR}, 
+      #{mac2,jdbcType=VARCHAR}, #{attach,jdbcType=VARCHAR}, #{certifid,jdbcType=VARCHAR}, 
+      #{carddeposit,jdbcType=DECIMAL}, #{reqorderid,jdbcType=VARCHAR}, #{balance,jdbcType=DECIMAL}, 
+      #{refno,jdbcType=VARCHAR}, #{orgsyssesq,jdbcType=VARCHAR}, #{oprresult,jdbcType=VARCHAR}, 
+      #{afteramt,jdbcType=DECIMAL}, #{tac,jdbcType=VARCHAR}, #{lstapdunum,jdbcType=VARCHAR}, 
+      #{lstapdulist,jdbcType=VARCHAR}, #{ordid,jdbcType=VARCHAR}, #{orgordid,jdbcType=VARCHAR}, 
+      #{payordid,jdbcType=VARCHAR}, #{voucherno,jdbcType=VARCHAR}, #{apdunum,jdbcType=VARCHAR}, 
+      #{apdulist,jdbcType=VARCHAR}, #{befamt,jdbcType=DECIMAL}, #{settdate,jdbcType=VARCHAR}, 
+      #{ifpin,jdbcType=VARCHAR}, #{pinchkamt,jdbcType=DECIMAL}, #{remindamt,jdbcType=DECIMAL}, 
+      #{ifrealname,jdbcType=VARCHAR}, #{holdname,jdbcType=VARCHAR}, #{holdtype,jdbcType=VARCHAR}, 
+      #{holdno,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{changeflag,jdbcType=VARCHAR}, 
+      #{newpassword,jdbcType=VARCHAR}, #{possysDate,jdbcType=VARCHAR}, #{cardbal,jdbcType=DECIMAL}, 
+      #{txnAmt,jdbcType=DECIMAL}, #{reqdate,jdbcType=VARCHAR}, #{reqtime,jdbcType=VARCHAR}, 
+      #{upstation,jdbcType=VARCHAR}, #{uptime,jdbcType=VARCHAR}, #{downstation,jdbcType=VARCHAR}, 
+      #{downtime,jdbcType=VARCHAR}, #{psamId,jdbcType=VARCHAR}, #{txnseq,jdbcType=VARCHAR}, 
+      #{befbal,jdbcType=DECIMAL}, #{txnamt,jdbcType=DECIMAL}, #{cardfaceno,jdbcType=VARCHAR}, 
+      #{payStatus,jdbcType=VARCHAR}, #{customerNo,jdbcType=VARCHAR}, #{privdata,jdbcType=VARCHAR}, 
+      #{lastSuccTime,jdbcType=VARCHAR}, #{posver,jdbcType=VARCHAR}, #{wlver,jdbcType=VARCHAR}, 
+      #{blver,jdbcType=VARCHAR}, #{cardver,jdbcType=VARCHAR}, #{pjver,jdbcType=VARCHAR}, 
+      #{txnnum,jdbcType=DECIMAL}, #{posrtd,jdbcType=VARCHAR}, #{posltd,jdbcType=VARCHAR}, 
+      #{responsecode,jdbcType=VARCHAR}, #{responsedesc,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{rsvd1,jdbcType=VARCHAR}, #{rsvd2,jdbcType=VARCHAR}, 
+      #{rsvd3,jdbcType=VARCHAR}, #{rsvd4,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="map" >
+    insert into t_preposition_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="txncode != null" >
+        TXNCODE,
+      </if>
+      <if test="syssesq != null" >
+        SYSSESQ,
+      </if>
+      <if test="reqseq != null" >
+        REQSEQ,
+      </if>
+      <if test="cardno != null" >
+        CARDNO,
+      </if>
+      <if test="instid != null" >
+        INSTID,
+      </if>
+      <if test="mchntid != null" >
+        MCHNTID,
+      </if>
+      <if test="termid != null" >
+        TERMID,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="txndate != null" >
+        TXNDATE,
+      </if>
+      <if test="txntime != null" >
+        TXNTIME,
+      </if>
+      <if test="reqsettdate != null" >
+        REQSETTDATE,
+      </if>
+      <if test="carddate != null" >
+        CARDDATE,
+      </if>
+      <if test="cardtime != null" >
+        CARDTIME,
+      </if>
+      <if test="orgtxndate != null" >
+        ORGTXNDATE,
+      </if>
+      <if test="city != null" >
+        CITY,
+      </if>
+      <if test="cardfee != null" >
+        CARDFEE,
+      </if>
+      <if test="random != null" >
+        RANDOM,
+      </if>
+      <if test="txntermid != null" >
+        TXNTERMID,
+      </if>
+      <if test="mac2 != null" >
+        MAC2,
+      </if>
+      <if test="attach != null" >
+        ATTACH,
+      </if>
+      <if test="certifid != null" >
+        CERTIFID,
+      </if>
+      <if test="carddeposit != null" >
+        CARDDEPOSIT,
+      </if>
+      <if test="reqorderid != null" >
+        REQORDERID,
+      </if>
+      <if test="balance != null" >
+        BALANCE,
+      </if>
+      <if test="refno != null" >
+        REFNO,
+      </if>
+      <if test="orgsyssesq != null" >
+        ORGSYSSESQ,
+      </if>
+      <if test="oprresult != null" >
+        OPRRESULT,
+      </if>
+      <if test="afteramt != null" >
+        AFTERAMT,
+      </if>
+      <if test="tac != null" >
+        TAC,
+      </if>
+      <if test="lstapdunum != null" >
+        LSTAPDUNUM,
+      </if>
+      <if test="lstapdulist != null" >
+        LSTAPDULIST,
+      </if>
+      <if test="ordid != null" >
+        ORDID,
+      </if>
+      <if test="orgordid != null" >
+        ORGORDID,
+      </if>
+      <if test="payordid != null" >
+        PAYORDID,
+      </if>
+      <if test="voucherno != null" >
+        VOUCHERNO,
+      </if>
+      <if test="apdunum != null" >
+        APDUNUM,
+      </if>
+      <if test="apdulist != null" >
+        APDULIST,
+      </if>
+      <if test="befamt != null" >
+        BEFAMT,
+      </if>
+      <if test="settdate != null" >
+        SETTDATE,
+      </if>
+      <if test="ifpin != null" >
+        IFPIN,
+      </if>
+      <if test="pinchkamt != null" >
+        PINCHKAMT,
+      </if>
+      <if test="remindamt != null" >
+        REMINDAMT,
+      </if>
+      <if test="ifrealname != null" >
+        IFREALNAME,
+      </if>
+      <if test="holdname != null" >
+        HOLDNAME,
+      </if>
+      <if test="holdtype != null" >
+        HOLDTYPE,
+      </if>
+      <if test="holdno != null" >
+        HOLDNO,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="changeflag != null" >
+        CHANGEFLAG,
+      </if>
+      <if test="newpassword != null" >
+        NEWPASSWORD,
+      </if>
+      <if test="possysDate != null" >
+        POSSYS_DATE,
+      </if>
+      <if test="cardbal != null" >
+        CARDBAL,
+      </if>
+      <if test="txnAmt != null" >
+        TXN_AMT,
+      </if>
+      <if test="reqdate != null" >
+        REQDATE,
+      </if>
+      <if test="reqtime != null" >
+        REQTIME,
+      </if>
+      <if test="upstation != null" >
+        UPSTATION,
+      </if>
+      <if test="uptime != null" >
+        UPTIME,
+      </if>
+      <if test="downstation != null" >
+        DOWNSTATION,
+      </if>
+      <if test="downtime != null" >
+        DOWNTIME,
+      </if>
+      <if test="psamId != null" >
+        PSAM_ID,
+      </if>
+      <if test="txnseq != null" >
+        TXNSEQ,
+      </if>
+      <if test="befbal != null" >
+        BEFBAL,
+      </if>
+      <if test="txnamt != null" >
+        TXNAMT,
+      </if>
+      <if test="cardfaceno != null" >
+        CARDFACENO,
+      </if>
+      <if test="payStatus != null" >
+        PAY_STATUS,
+      </if>
+      <if test="customerNo != null" >
+        CUSTOMER_NO,
+      </if>
+      <if test="privdata != null" >
+        PRIVDATA,
+      </if>
+      <if test="lastSuccTime != null" >
+        LAST_SUCC_TIME,
+      </if>
+      <if test="posver != null" >
+        POSVER,
+      </if>
+      <if test="wlver != null" >
+        WLVER,
+      </if>
+      <if test="blver != null" >
+        BLVER,
+      </if>
+      <if test="cardver != null" >
+        CARDVER,
+      </if>
+      <if test="pjver != null" >
+        PJVER,
+      </if>
+      <if test="txnnum != null" >
+        TXNNUM,
+      </if>
+      <if test="posrtd != null" >
+        POSRTD,
+      </if>
+      <if test="posltd != null" >
+        POSLTD,
+      </if>
+      <if test="responsecode != null" >
+        RESPONSECODE,
+      </if>
+      <if test="responsedesc != null" >
+        RESPONSEDESC,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="rsvd1 != null" >
+        RSVD1,
+      </if>
+      <if test="rsvd2 != null" >
+        RSVD2,
+      </if>
+      <if test="rsvd3 != null" >
+        RSVD3,
+      </if>
+      <if test="rsvd4 != null" >
+        RSVD4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="txncode != null" >
+        #{txncode,jdbcType=VARCHAR},
+      </if>
+      <if test="syssesq != null" >
+        #{syssesq,jdbcType=VARCHAR},
+      </if>
+      <if test="reqseq != null" >
+        #{reqseq,jdbcType=VARCHAR},
+      </if>
+      <if test="cardno != null" >
+        #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="instid != null" >
+        #{instid,jdbcType=VARCHAR},
+      </if>
+      <if test="mchntid != null" >
+        #{mchntid,jdbcType=VARCHAR},
+      </if>
+      <if test="termid != null" >
+        #{termid,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="txndate != null" >
+        #{txndate,jdbcType=VARCHAR},
+      </if>
+      <if test="txntime != null" >
+        #{txntime,jdbcType=VARCHAR},
+      </if>
+      <if test="reqsettdate != null" >
+        #{reqsettdate,jdbcType=VARCHAR},
+      </if>
+      <if test="carddate != null" >
+        #{carddate,jdbcType=VARCHAR},
+      </if>
+      <if test="cardtime != null" >
+        #{cardtime,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtxndate != null" >
+        #{orgtxndate,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="cardfee != null" >
+        #{cardfee,jdbcType=DECIMAL},
+      </if>
+      <if test="random != null" >
+        #{random,jdbcType=VARCHAR},
+      </if>
+      <if test="txntermid != null" >
+        #{txntermid,jdbcType=VARCHAR},
+      </if>
+      <if test="mac2 != null" >
+        #{mac2,jdbcType=VARCHAR},
+      </if>
+      <if test="attach != null" >
+        #{attach,jdbcType=VARCHAR},
+      </if>
+      <if test="certifid != null" >
+        #{certifid,jdbcType=VARCHAR},
+      </if>
+      <if test="carddeposit != null" >
+        #{carddeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="reqorderid != null" >
+        #{reqorderid,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="refno != null" >
+        #{refno,jdbcType=VARCHAR},
+      </if>
+      <if test="orgsyssesq != null" >
+        #{orgsyssesq,jdbcType=VARCHAR},
+      </if>
+      <if test="oprresult != null" >
+        #{oprresult,jdbcType=VARCHAR},
+      </if>
+      <if test="afteramt != null" >
+        #{afteramt,jdbcType=DECIMAL},
+      </if>
+      <if test="tac != null" >
+        #{tac,jdbcType=VARCHAR},
+      </if>
+      <if test="lstapdunum != null" >
+        #{lstapdunum,jdbcType=VARCHAR},
+      </if>
+      <if test="lstapdulist != null" >
+        #{lstapdulist,jdbcType=VARCHAR},
+      </if>
+      <if test="ordid != null" >
+        #{ordid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgordid != null" >
+        #{orgordid,jdbcType=VARCHAR},
+      </if>
+      <if test="payordid != null" >
+        #{payordid,jdbcType=VARCHAR},
+      </if>
+      <if test="voucherno != null" >
+        #{voucherno,jdbcType=VARCHAR},
+      </if>
+      <if test="apdunum != null" >
+        #{apdunum,jdbcType=VARCHAR},
+      </if>
+      <if test="apdulist != null" >
+        #{apdulist,jdbcType=VARCHAR},
+      </if>
+      <if test="befamt != null" >
+        #{befamt,jdbcType=DECIMAL},
+      </if>
+      <if test="settdate != null" >
+        #{settdate,jdbcType=VARCHAR},
+      </if>
+      <if test="ifpin != null" >
+        #{ifpin,jdbcType=VARCHAR},
+      </if>
+      <if test="pinchkamt != null" >
+        #{pinchkamt,jdbcType=DECIMAL},
+      </if>
+      <if test="remindamt != null" >
+        #{remindamt,jdbcType=DECIMAL},
+      </if>
+      <if test="ifrealname != null" >
+        #{ifrealname,jdbcType=VARCHAR},
+      </if>
+      <if test="holdname != null" >
+        #{holdname,jdbcType=VARCHAR},
+      </if>
+      <if test="holdtype != null" >
+        #{holdtype,jdbcType=VARCHAR},
+      </if>
+      <if test="holdno != null" >
+        #{holdno,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="changeflag != null" >
+        #{changeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="newpassword != null" >
+        #{newpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="possysDate != null" >
+        #{possysDate,jdbcType=VARCHAR},
+      </if>
+      <if test="cardbal != null" >
+        #{cardbal,jdbcType=DECIMAL},
+      </if>
+      <if test="txnAmt != null" >
+        #{txnAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="reqdate != null" >
+        #{reqdate,jdbcType=VARCHAR},
+      </if>
+      <if test="reqtime != null" >
+        #{reqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="upstation != null" >
+        #{upstation,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null" >
+        #{uptime,jdbcType=VARCHAR},
+      </if>
+      <if test="downstation != null" >
+        #{downstation,jdbcType=VARCHAR},
+      </if>
+      <if test="downtime != null" >
+        #{downtime,jdbcType=VARCHAR},
+      </if>
+      <if test="psamId != null" >
+        #{psamId,jdbcType=VARCHAR},
+      </if>
+      <if test="txnseq != null" >
+        #{txnseq,jdbcType=VARCHAR},
+      </if>
+      <if test="befbal != null" >
+        #{befbal,jdbcType=DECIMAL},
+      </if>
+      <if test="txnamt != null" >
+        #{txnamt,jdbcType=DECIMAL},
+      </if>
+      <if test="cardfaceno != null" >
+        #{cardfaceno,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="customerNo != null" >
+        #{customerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="privdata != null" >
+        #{privdata,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSuccTime != null" >
+        #{lastSuccTime,jdbcType=VARCHAR},
+      </if>
+      <if test="posver != null" >
+        #{posver,jdbcType=VARCHAR},
+      </if>
+      <if test="wlver != null" >
+        #{wlver,jdbcType=VARCHAR},
+      </if>
+      <if test="blver != null" >
+        #{blver,jdbcType=VARCHAR},
+      </if>
+      <if test="cardver != null" >
+        #{cardver,jdbcType=VARCHAR},
+      </if>
+      <if test="pjver != null" >
+        #{pjver,jdbcType=VARCHAR},
+      </if>
+      <if test="txnnum != null" >
+        #{txnnum,jdbcType=DECIMAL},
+      </if>
+      <if test="posrtd != null" >
+        #{posrtd,jdbcType=VARCHAR},
+      </if>
+      <if test="posltd != null" >
+        #{posltd,jdbcType=VARCHAR},
+      </if>
+      <if test="responsecode != null" >
+        #{responsecode,jdbcType=VARCHAR},
+      </if>
+      <if test="responsedesc != null" >
+        #{responsedesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd1 != null" >
+        #{rsvd1,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd2 != null" >
+        #{rsvd2,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd3 != null" >
+        #{rsvd3,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd4 != null" >
+        #{rsvd4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="map" >
+    update t_preposition_log
+    <set >
+      <if test="cardno != null" >
+        CARDNO = #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="instid != null" >
+        INSTID = #{instid,jdbcType=VARCHAR},
+      </if>
+      <if test="mchntid != null" >
+        MCHNTID = #{mchntid,jdbcType=VARCHAR},
+      </if>
+      <if test="termid != null" >
+        TERMID = #{termid,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="txndate != null" >
+        TXNDATE = #{txndate,jdbcType=VARCHAR},
+      </if>
+      <if test="txntime != null" >
+        TXNTIME = #{txntime,jdbcType=VARCHAR},
+      </if>
+      <if test="reqsettdate != null" >
+        REQSETTDATE = #{reqsettdate,jdbcType=VARCHAR},
+      </if>
+      <if test="carddate != null" >
+        CARDDATE = #{carddate,jdbcType=VARCHAR},
+      </if>
+      <if test="cardtime != null" >
+        CARDTIME = #{cardtime,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtxndate != null" >
+        ORGTXNDATE = #{orgtxndate,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        CITY = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="cardfee != null" >
+        CARDFEE = #{cardfee,jdbcType=DECIMAL},
+      </if>
+      <if test="random != null" >
+        RANDOM = #{random,jdbcType=VARCHAR},
+      </if>
+      <if test="txntermid != null" >
+        TXNTERMID = #{txntermid,jdbcType=VARCHAR},
+      </if>
+      <if test="mac2 != null" >
+        MAC2 = #{mac2,jdbcType=VARCHAR},
+      </if>
+      <if test="attach != null" >
+        ATTACH = #{attach,jdbcType=VARCHAR},
+      </if>
+      <if test="certifid != null" >
+        CERTIFID = #{certifid,jdbcType=VARCHAR},
+      </if>
+      <if test="carddeposit != null" >
+        CARDDEPOSIT = #{carddeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="reqorderid != null" >
+        REQORDERID = #{reqorderid,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        BALANCE = #{balance,jdbcType=DECIMAL},
+      </if>
+      <if test="refno != null" >
+        REFNO = #{refno,jdbcType=VARCHAR},
+      </if>
+      <if test="orgsyssesq != null" >
+        ORGSYSSESQ = #{orgsyssesq,jdbcType=VARCHAR},
+      </if>
+      <if test="oprresult != null" >
+        OPRRESULT = #{oprresult,jdbcType=VARCHAR},
+      </if>
+      <if test="afteramt != null" >
+        AFTERAMT = #{afteramt,jdbcType=DECIMAL},
+      </if>
+      <if test="tac != null" >
+        TAC = #{tac,jdbcType=VARCHAR},
+      </if>
+      <if test="lstapdunum != null" >
+        LSTAPDUNUM = #{lstapdunum,jdbcType=VARCHAR},
+      </if>
+      <if test="lstapdulist != null" >
+        LSTAPDULIST = #{lstapdulist,jdbcType=VARCHAR},
+      </if>
+      <if test="ordid != null" >
+        ORDID = #{ordid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgordid != null" >
+        ORGORDID = #{orgordid,jdbcType=VARCHAR},
+      </if>
+      <if test="payordid != null" >
+        PAYORDID = #{payordid,jdbcType=VARCHAR},
+      </if>
+      <if test="voucherno != null" >
+        VOUCHERNO = #{voucherno,jdbcType=VARCHAR},
+      </if>
+      <if test="apdunum != null" >
+        APDUNUM = #{apdunum,jdbcType=VARCHAR},
+      </if>
+      <if test="apdulist != null" >
+        APDULIST = #{apdulist,jdbcType=VARCHAR},
+      </if>
+      <if test="befamt != null" >
+        BEFAMT = #{befamt,jdbcType=DECIMAL},
+      </if>
+      <if test="settdate != null" >
+        SETTDATE = #{settdate,jdbcType=VARCHAR},
+      </if>
+      <if test="ifpin != null" >
+        IFPIN = #{ifpin,jdbcType=VARCHAR},
+      </if>
+      <if test="pinchkamt != null" >
+        PINCHKAMT = #{pinchkamt,jdbcType=DECIMAL},
+      </if>
+      <if test="remindamt != null" >
+        REMINDAMT = #{remindamt,jdbcType=DECIMAL},
+      </if>
+      <if test="ifrealname != null" >
+        IFREALNAME = #{ifrealname,jdbcType=VARCHAR},
+      </if>
+      <if test="holdname != null" >
+        HOLDNAME = #{holdname,jdbcType=VARCHAR},
+      </if>
+      <if test="holdtype != null" >
+        HOLDTYPE = #{holdtype,jdbcType=VARCHAR},
+      </if>
+      <if test="holdno != null" >
+        HOLDNO = #{holdno,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="changeflag != null" >
+        CHANGEFLAG = #{changeflag,jdbcType=VARCHAR},
+      </if>
+      <if test="newpassword != null" >
+        NEWPASSWORD = #{newpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="possysDate != null" >
+        POSSYS_DATE = #{possysDate,jdbcType=VARCHAR},
+      </if>
+      <if test="cardbal != null" >
+        CARDBAL = #{cardbal,jdbcType=DECIMAL},
+      </if>
+      <if test="txnAmt != null" >
+        TXN_AMT = #{txnAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="reqdate != null" >
+        REQDATE = #{reqdate,jdbcType=VARCHAR},
+      </if>
+      <if test="reqtime != null" >
+        REQTIME = #{reqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="upstation != null" >
+        UPSTATION = #{upstation,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null" >
+        UPTIME = #{uptime,jdbcType=VARCHAR},
+      </if>
+      <if test="downstation != null" >
+        DOWNSTATION = #{downstation,jdbcType=VARCHAR},
+      </if>
+      <if test="downtime != null" >
+        DOWNTIME = #{downtime,jdbcType=VARCHAR},
+      </if>
+      <if test="psamId != null" >
+        PSAM_ID = #{psamId,jdbcType=VARCHAR},
+      </if>
+      <if test="txnseq != null" >
+        TXNSEQ = #{txnseq,jdbcType=VARCHAR},
+      </if>
+      <if test="befbal != null" >
+        BEFBAL = #{befbal,jdbcType=DECIMAL},
+      </if>
+      <if test="txnamt != null" >
+        TXNAMT = #{txnamt,jdbcType=DECIMAL},
+      </if>
+      <if test="cardfaceno != null" >
+        CARDFACENO = #{cardfaceno,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        PAY_STATUS = #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="customerNo != null" >
+        CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="privdata != null" >
+        PRIVDATA = #{privdata,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSuccTime != null" >
+        LAST_SUCC_TIME = #{lastSuccTime,jdbcType=VARCHAR},
+      </if>
+      <if test="posver != null" >
+        POSVER = #{posver,jdbcType=VARCHAR},
+      </if>
+      <if test="wlver != null" >
+        WLVER = #{wlver,jdbcType=VARCHAR},
+      </if>
+      <if test="blver != null" >
+        BLVER = #{blver,jdbcType=VARCHAR},
+      </if>
+      <if test="cardver != null" >
+        CARDVER = #{cardver,jdbcType=VARCHAR},
+      </if>
+      <if test="pjver != null" >
+        PJVER = #{pjver,jdbcType=VARCHAR},
+      </if>
+      <if test="txnnum != null" >
+        TXNNUM = #{txnnum,jdbcType=DECIMAL},
+      </if>
+      <if test="posrtd != null" >
+        POSRTD = #{posrtd,jdbcType=VARCHAR},
+      </if>
+      <if test="posltd != null" >
+        POSLTD = #{posltd,jdbcType=VARCHAR},
+      </if>
+      <if test="responsecode != null" >
+        RESPONSECODE = #{responsecode,jdbcType=VARCHAR},
+      </if>
+      <if test="responsedesc != null" >
+        RESPONSEDESC = #{responsedesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd1 != null" >
+        RSVD1 = #{rsvd1,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd2 != null" >
+        RSVD2 = #{rsvd2,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd3 != null" >
+        RSVD3 = #{rsvd3,jdbcType=VARCHAR},
+      </if>
+      <if test="rsvd4 != null" >
+        RSVD4 = #{rsvd4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TXNCODE = #{txncode,jdbcType=VARCHAR}
+      and SYSSESQ = #{syssesq,jdbcType=VARCHAR}
+      and REQSEQ = #{reqseq,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jieyi.accservice.form.TPrepositionLog" >
+    update t_preposition_log
+    set CARDNO = #{cardno,jdbcType=VARCHAR},
+      INSTID = #{instid,jdbcType=VARCHAR},
+      MCHNTID = #{mchntid,jdbcType=VARCHAR},
+      TERMID = #{termid,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      TXNDATE = #{txndate,jdbcType=VARCHAR},
+      TXNTIME = #{txntime,jdbcType=VARCHAR},
+      REQSETTDATE = #{reqsettdate,jdbcType=VARCHAR},
+      CARDDATE = #{carddate,jdbcType=VARCHAR},
+      CARDTIME = #{cardtime,jdbcType=VARCHAR},
+      ORGTXNDATE = #{orgtxndate,jdbcType=VARCHAR},
+      CITY = #{city,jdbcType=VARCHAR},
+      CARDFEE = #{cardfee,jdbcType=DECIMAL},
+      RANDOM = #{random,jdbcType=VARCHAR},
+      TXNTERMID = #{txntermid,jdbcType=VARCHAR},
+      MAC2 = #{mac2,jdbcType=VARCHAR},
+      ATTACH = #{attach,jdbcType=VARCHAR},
+      CERTIFID = #{certifid,jdbcType=VARCHAR},
+      CARDDEPOSIT = #{carddeposit,jdbcType=DECIMAL},
+      REQORDERID = #{reqorderid,jdbcType=VARCHAR},
+      BALANCE = #{balance,jdbcType=DECIMAL},
+      REFNO = #{refno,jdbcType=VARCHAR},
+      ORGSYSSESQ = #{orgsyssesq,jdbcType=VARCHAR},
+      OPRRESULT = #{oprresult,jdbcType=VARCHAR},
+      AFTERAMT = #{afteramt,jdbcType=DECIMAL},
+      TAC = #{tac,jdbcType=VARCHAR},
+      LSTAPDUNUM = #{lstapdunum,jdbcType=VARCHAR},
+      LSTAPDULIST = #{lstapdulist,jdbcType=VARCHAR},
+      ORDID = #{ordid,jdbcType=VARCHAR},
+      ORGORDID = #{orgordid,jdbcType=VARCHAR},
+      PAYORDID = #{payordid,jdbcType=VARCHAR},
+      VOUCHERNO = #{voucherno,jdbcType=VARCHAR},
+      APDUNUM = #{apdunum,jdbcType=VARCHAR},
+      APDULIST = #{apdulist,jdbcType=VARCHAR},
+      BEFAMT = #{befamt,jdbcType=DECIMAL},
+      SETTDATE = #{settdate,jdbcType=VARCHAR},
+      IFPIN = #{ifpin,jdbcType=VARCHAR},
+      PINCHKAMT = #{pinchkamt,jdbcType=DECIMAL},
+      REMINDAMT = #{remindamt,jdbcType=DECIMAL},
+      IFREALNAME = #{ifrealname,jdbcType=VARCHAR},
+      HOLDNAME = #{holdname,jdbcType=VARCHAR},
+      HOLDTYPE = #{holdtype,jdbcType=VARCHAR},
+      HOLDNO = #{holdno,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      CHANGEFLAG = #{changeflag,jdbcType=VARCHAR},
+      NEWPASSWORD = #{newpassword,jdbcType=VARCHAR},
+      POSSYS_DATE = #{possysDate,jdbcType=VARCHAR},
+      CARDBAL = #{cardbal,jdbcType=DECIMAL},
+      TXN_AMT = #{txnAmt,jdbcType=DECIMAL},
+      REQDATE = #{reqdate,jdbcType=VARCHAR},
+      REQTIME = #{reqtime,jdbcType=VARCHAR},
+      UPSTATION = #{upstation,jdbcType=VARCHAR},
+      UPTIME = #{uptime,jdbcType=VARCHAR},
+      DOWNSTATION = #{downstation,jdbcType=VARCHAR},
+      DOWNTIME = #{downtime,jdbcType=VARCHAR},
+      PSAM_ID = #{psamId,jdbcType=VARCHAR},
+      TXNSEQ = #{txnseq,jdbcType=VARCHAR},
+      BEFBAL = #{befbal,jdbcType=DECIMAL},
+      TXNAMT = #{txnamt,jdbcType=DECIMAL},
+      CARDFACENO = #{cardfaceno,jdbcType=VARCHAR},
+      PAY_STATUS = #{payStatus,jdbcType=VARCHAR},
+      CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+      PRIVDATA = #{privdata,jdbcType=VARCHAR},
+      LAST_SUCC_TIME = #{lastSuccTime,jdbcType=VARCHAR},
+      POSVER = #{posver,jdbcType=VARCHAR},
+      WLVER = #{wlver,jdbcType=VARCHAR},
+      BLVER = #{blver,jdbcType=VARCHAR},
+      CARDVER = #{cardver,jdbcType=VARCHAR},
+      PJVER = #{pjver,jdbcType=VARCHAR},
+      TXNNUM = #{txnnum,jdbcType=DECIMAL},
+      POSRTD = #{posrtd,jdbcType=VARCHAR},
+      POSLTD = #{posltd,jdbcType=VARCHAR},
+      RESPONSECODE = #{responsecode,jdbcType=VARCHAR},
+      RESPONSEDESC = #{responsedesc,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+      RSVD1 = #{rsvd1,jdbcType=VARCHAR},
+      RSVD2 = #{rsvd2,jdbcType=VARCHAR},
+      RSVD3 = #{rsvd3,jdbcType=VARCHAR},
+      RSVD4 = #{rsvd4,jdbcType=VARCHAR}
+    where TXNCODE = #{txncode,jdbcType=VARCHAR}
+      and SYSSESQ = #{syssesq,jdbcType=VARCHAR}
+      and REQSEQ = #{reqseq,jdbcType=VARCHAR}
+  </update>
+</mapper>

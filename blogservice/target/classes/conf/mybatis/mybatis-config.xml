@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+
+	<!-- 定义实体类的别名 -->
+	<typeAliases>
+		<package name="jieyi.accservice.dao" />		
+	</typeAliases> 
+	<mappers>
+		<mapper resource="conf/mybatis/mapper/mapper//TInfoAccountCardMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/mapper//TInfoAccountMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/mapper//TInfoCustomerMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/sqlMap-dual.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TLogOnlinePaymentMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TParamMacposinfoMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/SequenceMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TPrepositionLogMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TPrepositionInstkeyMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TParAccTypeMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/TblBseMchntKeyMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/UserInfoMapper.xml" />
+		<mapper resource="conf/mybatis/mapper/oracle/MediaMapper.xml" />
+	</mappers>
+
+</configuration>
+

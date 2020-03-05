@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TParamMacposinfoMapper" >
+  <resultMap id="BaseResultMap" type="jieyi.accservice.form.TParamMacposinfo" >
+    <id column="POSID" property="posid" jdbcType="VARCHAR" />
+    <result column="MACID" property="macid" jdbcType="VARCHAR" />
+    <result column="UNITID" property="unitid" jdbcType="VARCHAR" />
+    <result column="NETID" property="netid" jdbcType="VARCHAR" />
+    <result column="POSTMKSTATUS" property="postmkstatus" jdbcType="DECIMAL" />
+    <result column="POSTMK" property="postmk" jdbcType="VARCHAR" />
+    <result column="CHECKVALUE" property="checkvalue" jdbcType="VARCHAR" />
+    <result column="PRINTERTYPE" property="printertype" jdbcType="DECIMAL" />
+    <result column="PRINTERNAME" property="printername" jdbcType="VARCHAR" />
+    <result column="CARDREADERTYPE" property="cardreadertype" jdbcType="DECIMAL" />
+    <result column="CARDREADERDLLNAME" property="cardreaderdllname" jdbcType="VARCHAR" />
+    <result column="CARDREADPORTTYPE" property="cardreadporttype" jdbcType="VARCHAR" />
+    <result column="LASTCHECKSTATUS" property="lastcheckstatus" jdbcType="DECIMAL" />
+    <result column="LASTCHECKTIME" property="lastchecktime" jdbcType="VARCHAR" />
+    <result column="LASTCHECKUSERID" property="lastcheckuserid" jdbcType="VARCHAR" />
+    <result column="LASTCHECKBATCH" property="lastcheckbatch" jdbcType="DECIMAL" />
+    <result column="POSSEQ" property="posseq" jdbcType="DECIMAL" />
+    <result column="PRINTCOUNTPERBIZ" property="printcountperbiz" jdbcType="DECIMAL" />
+    <result column="PASSWDKEYPADCOM" property="passwdkeypadcom" jdbcType="DECIMAL" />
+    <result column="READEROPENCOM" property="readeropencom" jdbcType="DECIMAL" />
+    <result column="INSTCD" property="instcd" jdbcType="VARCHAR" />
+    <result column="MACKEY" property="mackey" jdbcType="VARCHAR" />
+    <result column="PINKEY" property="pinkey" jdbcType="VARCHAR" />
+    <result column="PINKEY_CHECKVALUE" property="pinkeyCheckvalue" jdbcType="VARCHAR" />
+    <result column="POSBIZTYPE" property="posbiztype" jdbcType="VARCHAR" />
+    <result column="BATCHNO" property="batchno" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    POSID, MACID, UNITID, NETID, POSTMKSTATUS, POSTMK, CHECKVALUE, PRINTERTYPE, PRINTERNAME, 
+    CARDREADERTYPE, CARDREADERDLLNAME, CARDREADPORTTYPE, LASTCHECKSTATUS, LASTCHECKTIME, 
+    LASTCHECKUSERID, LASTCHECKBATCH, POSSEQ, PRINTCOUNTPERBIZ, PASSWDKEYPADCOM, READEROPENCOM, 
+    INSTCD, MACKEY, PINKEY,PINKEY_CHECKVALUE, POSBIZTYPE, BATCHNO
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_param_macposinfo
+    where POSID = #{posid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectAll" parameterType="map" resultMap="BaseResultMap">
+	   	select * from t_param_macposinfo t
+		where t.posid = #{posid}  AND t.unitid = #{unitid}
+		order by t.posid
+	</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_param_macposinfo
+    where POSID = #{posid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="jieyi.accservice.form.TParamMacposinfo" >
+    insert into t_param_macposinfo (POSID, MACID, UNITID, 
+      NETID, POSTMKSTATUS, POSTMK, 
+      CHECKVALUE, PRINTERTYPE, PRINTERNAME, 
+      CARDREADERTYPE, CARDREADERDLLNAME, CARDREADPORTTYPE, 
+      LASTCHECKSTATUS, LASTCHECKTIME, LASTCHECKUSERID, 
+      LASTCHECKBATCH, POSSEQ, PRINTCOUNTPERBIZ, 
+      PASSWDKEYPADCOM, READEROPENCOM, INSTCD, 
+      MACKEY, PINKEY,PINKEY_CHECKVALUE,POSBIZTYPE, 
+      BATCHNO)
+    values (#{posid,jdbcType=VARCHAR}, #{macid,jdbcType=VARCHAR}, #{unitid,jdbcType=VARCHAR}, 
+      #{netid,jdbcType=VARCHAR}, #{postmkstatus,jdbcType=DECIMAL}, #{postmk,jdbcType=VARCHAR}, 
+      #{checkvalue,jdbcType=VARCHAR}, #{printertype,jdbcType=DECIMAL}, #{printername,jdbcType=VARCHAR}, 
+      #{cardreadertype,jdbcType=DECIMAL}, #{cardreaderdllname,jdbcType=VARCHAR}, #{cardreadporttype,jdbcType=VARCHAR}, 
+      #{lastcheckstatus,jdbcType=DECIMAL}, #{lastchecktime,jdbcType=VARCHAR}, #{lastcheckuserid,jdbcType=VARCHAR}, 
+      #{lastcheckbatch,jdbcType=DECIMAL}, #{posseq,jdbcType=DECIMAL}, #{printcountperbiz,jdbcType=DECIMAL}, 
+      #{passwdkeypadcom,jdbcType=DECIMAL}, #{readeropencom,jdbcType=DECIMAL}, #{instcd,jdbcType=VARCHAR}, 
+      #{mackey,jdbcType=VARCHAR}, #{pinkey,jdbcType=VARCHAR},#{pinkeyCheckvalue,jdbcType=VARCHAR}, #{posbiztype,jdbcType=VARCHAR}, 
+      #{batchno,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="jieyi.accservice.form.TParamMacposinfo" >
+    insert into t_param_macposinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="posid != null" >
+        POSID,
+      </if>
+      <if test="macid != null" >
+        MACID,
+      </if>
+      <if test="unitid != null" >
+        UNITID,
+      </if>
+      <if test="netid != null" >
+        NETID,
+      </if>
+      <if test="postmkstatus != null" >
+        POSTMKSTATUS,
+      </if>
+      <if test="postmk != null" >
+        POSTMK,
+      </if>
+      <if test="checkvalue != null" >
+        CHECKVALUE,
+      </if>
+      <if test="printertype != null" >
+        PRINTERTYPE,
+      </if>
+      <if test="printername != null" >
+        PRINTERNAME,
+      </if>
+      <if test="cardreadertype != null" >
+        CARDREADERTYPE,
+      </if>
+      <if test="cardreaderdllname != null" >
+        CARDREADERDLLNAME,
+      </if>
+      <if test="cardreadporttype != null" >
+        CARDREADPORTTYPE,
+      </if>
+      <if test="lastcheckstatus != null" >
+        LASTCHECKSTATUS,
+      </if>
+      <if test="lastchecktime != null" >
+        LASTCHECKTIME,
+      </if>
+      <if test="lastcheckuserid != null" >
+        LASTCHECKUSERID,
+      </if>
+      <if test="lastcheckbatch != null" >
+        LASTCHECKBATCH,
+      </if>
+      <if test="posseq != null" >
+        POSSEQ,
+      </if>
+      <if test="printcountperbiz != null" >
+        PRINTCOUNTPERBIZ,
+      </if>
+      <if test="passwdkeypadcom != null" >
+        PASSWDKEYPADCOM,
+      </if>
+      <if test="readeropencom != null" >
+        READEROPENCOM,
+      </if>
+      <if test="instcd != null" >
+        INSTCD,
+      </if>
+      <if test="mackey != null" >
+        MACKEY,
+      </if>
+      <if test="pinkeyCheckvalue != null" >
+        PINKEY_CHECKVALUE,
+      </if>
+      <if test="pinkey != null" >
+        PINKEY,
+      </if>
+      <if test="posbiztype != null" >
+        POSBIZTYPE,
+      </if>
+      <if test="batchno != null" >
+        BATCHNO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="posid != null" >
+        #{posid,jdbcType=VARCHAR},
+      </if>
+      <if test="macid != null" >
+        #{macid,jdbcType=VARCHAR},
+      </if>
+      <if test="unitid != null" >
+        #{unitid,jdbcType=VARCHAR},
+      </if>
+      <if test="netid != null" >
+        #{netid,jdbcType=VARCHAR},
+      </if>
+      <if test="postmkstatus != null" >
+        #{postmkstatus,jdbcType=DECIMAL},
+      </if>
+      <if test="postmk != null" >
+        #{postmk,jdbcType=VARCHAR},
+      </if>
+      <if test="checkvalue != null" >
+        #{checkvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="printertype != null" >
+        #{printertype,jdbcType=DECIMAL},
+      </if>
+      <if test="printername != null" >
+        #{printername,jdbcType=VARCHAR},
+      </if>
+      <if test="cardreadertype != null" >
+        #{cardreadertype,jdbcType=DECIMAL},
+      </if>
+      <if test="cardreaderdllname != null" >
+        #{cardreaderdllname,jdbcType=VARCHAR},
+      </if>
+      <if test="cardreadporttype != null" >
+        #{cardreadporttype,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckstatus != null" >
+        #{lastcheckstatus,jdbcType=DECIMAL},
+      </if>
+      <if test="lastchecktime != null" >
+        #{lastchecktime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckuserid != null" >
+        #{lastcheckuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckbatch != null" >
+        #{lastcheckbatch,jdbcType=DECIMAL},
+      </if>
+      <if test="posseq != null" >
+        #{posseq,jdbcType=DECIMAL},
+      </if>
+      <if test="printcountperbiz != null" >
+        #{printcountperbiz,jdbcType=DECIMAL},
+      </if>
+      <if test="passwdkeypadcom != null" >
+        #{passwdkeypadcom,jdbcType=DECIMAL},
+      </if>
+      <if test="readeropencom != null" >
+        #{readeropencom,jdbcType=DECIMAL},
+      </if>
+      <if test="instcd != null" >
+        #{instcd,jdbcType=VARCHAR},
+      </if>
+      <if test="mackey != null" >
+        #{mackey,jdbcType=VARCHAR},
+      </if>
+      <if test="pinkey != null" >
+        #{pinkey,jdbcType=VARCHAR},
+      </if>
+       <if test="pinkeyCheckvalue != null" >
+        #{PINKEY_CHECKVALUE,jdbcType=VARCHAR},
+      </if>
+      <if test="posbiztype != null" >
+        #{posbiztype,jdbcType=VARCHAR},
+      </if>
+      <if test="batchno != null" >
+        #{batchno,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="jieyi.accservice.form.TParamMacposinfo" >
+    update t_param_macposinfo
+    <set >
+      <if test="macid != null" >
+        MACID = #{macid,jdbcType=VARCHAR},
+      </if>
+      <if test="unitid != null" >
+        UNITID = #{unitid,jdbcType=VARCHAR},
+      </if>
+      <if test="netid != null" >
+        NETID = #{netid,jdbcType=VARCHAR},
+      </if>
+      <if test="postmkstatus != null" >
+        POSTMKSTATUS = #{postmkstatus,jdbcType=DECIMAL},
+      </if>
+      <if test="postmk != null" >
+        POSTMK = #{postmk,jdbcType=VARCHAR},
+      </if>
+      <if test="checkvalue != null" >
+        CHECKVALUE = #{checkvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="printertype != null" >
+        PRINTERTYPE = #{printertype,jdbcType=DECIMAL},
+      </if>
+      <if test="printername != null" >
+        PRINTERNAME = #{printername,jdbcType=VARCHAR},
+      </if>
+      <if test="cardreadertype != null" >
+        CARDREADERTYPE = #{cardreadertype,jdbcType=DECIMAL},
+      </if>
+      <if test="cardreaderdllname != null" >
+        CARDREADERDLLNAME = #{cardreaderdllname,jdbcType=VARCHAR},
+      </if>
+      <if test="cardreadporttype != null" >
+        CARDREADPORTTYPE = #{cardreadporttype,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckstatus != null" >
+        LASTCHECKSTATUS = #{lastcheckstatus,jdbcType=DECIMAL},
+      </if>
+      <if test="lastchecktime != null" >
+        LASTCHECKTIME = #{lastchecktime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckuserid != null" >
+        LASTCHECKUSERID = #{lastcheckuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckbatch != null" >
+        LASTCHECKBATCH = #{lastcheckbatch,jdbcType=DECIMAL},
+      </if>
+      <if test="posseq != null" >
+        POSSEQ = #{posseq,jdbcType=DECIMAL},
+      </if>
+      <if test="printcountperbiz != null" >
+        PRINTCOUNTPERBIZ = #{printcountperbiz,jdbcType=DECIMAL},
+      </if>
+      <if test="passwdkeypadcom != null" >
+        PASSWDKEYPADCOM = #{passwdkeypadcom,jdbcType=DECIMAL},
+      </if>
+      <if test="readeropencom != null" >
+        READEROPENCOM = #{readeropencom,jdbcType=DECIMAL},
+      </if>
+      <if test="instcd != null" >
+        INSTCD = #{instcd,jdbcType=VARCHAR},
+      </if>
+      <if test="mackey != null" >
+        MACKEY = #{mackey,jdbcType=VARCHAR},
+      </if>
+      <if test="pinkey != null" >
+        PINKEY = #{pinkey,jdbcType=VARCHAR},
+      </if>
+      <if test="pinkeyCheckvalue != null" >
+        PINKEY_CHECKVALUE = #{pinkeyCheckvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="posbiztype != null" >
+        POSBIZTYPE = #{posbiztype,jdbcType=VARCHAR},
+      </if>
+      <if test="batchno != null" >
+        BATCHNO = #{batchno,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where POSID = #{posid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jieyi.accservice.form.TParamMacposinfo" >
+    update t_param_macposinfo
+    set MACID = #{macid,jdbcType=VARCHAR},
+      UNITID = #{unitid,jdbcType=VARCHAR},
+      NETID = #{netid,jdbcType=VARCHAR},
+      POSTMKSTATUS = #{postmkstatus,jdbcType=DECIMAL},
+      POSTMK = #{postmk,jdbcType=VARCHAR},
+      CHECKVALUE = #{checkvalue,jdbcType=VARCHAR},
+      PRINTERTYPE = #{printertype,jdbcType=DECIMAL},
+      PRINTERNAME = #{printername,jdbcType=VARCHAR},
+      CARDREADERTYPE = #{cardreadertype,jdbcType=DECIMAL},
+      CARDREADERDLLNAME = #{cardreaderdllname,jdbcType=VARCHAR},
+      CARDREADPORTTYPE = #{cardreadporttype,jdbcType=VARCHAR},
+      LASTCHECKSTATUS = #{lastcheckstatus,jdbcType=DECIMAL},
+      LASTCHECKTIME = #{lastchecktime,jdbcType=VARCHAR},
+      LASTCHECKUSERID = #{lastcheckuserid,jdbcType=VARCHAR},
+      LASTCHECKBATCH = #{lastcheckbatch,jdbcType=DECIMAL},
+      POSSEQ = #{posseq,jdbcType=DECIMAL},
+      PRINTCOUNTPERBIZ = #{printcountperbiz,jdbcType=DECIMAL},
+      PASSWDKEYPADCOM = #{passwdkeypadcom,jdbcType=DECIMAL},
+      READEROPENCOM = #{readeropencom,jdbcType=DECIMAL},
+      INSTCD = #{instcd,jdbcType=VARCHAR},
+      MACKEY = #{mackey,jdbcType=VARCHAR},
+      PINKEY = #{pinkey,jdbcType=VARCHAR},
+      PINKEY_CHECKVALUE = #{pinkeyCheckvalue,jdbcType=VARCHAR},
+      POSBIZTYPE = #{posbiztype,jdbcType=VARCHAR},
+      BATCHNO = #{batchno,jdbcType=DECIMAL}
+    where POSID = #{posid,jdbcType=VARCHAR}
+  </update>
+</mapper>

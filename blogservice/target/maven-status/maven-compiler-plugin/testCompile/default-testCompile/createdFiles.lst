@@ -1,0 +1,10 @@
+test\AccQueryTest.class
+test\CloseAccApayTest.class
+test\UploadImagesTest.class
+test\qrCode\OpenAccTest.class
+test\qrCode\BalanceQueryTest.class
+test\qrCode\PayForQrCodeTest.class
+test\qrCode\TestBase.class
+test\Test.class
+test\qrCode\GetQrCodeTest.class
+test\OpenAccountTest.class

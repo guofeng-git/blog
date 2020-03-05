@@ -1,0 +1,84 @@
+server: 
+  undertow: 
+    buffer-size: 4096
+    io-threads: 20
+    max-http-post-size: -1
+    worker-threads: 160
+  port: 28090
+
+spring: 
+  datasource: 
+    type: com.alibaba.druid.pool.DruidDataSource
+  profiles: 
+   active: test
+
+datasource: 
+  druid: 
+    filters: stat
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-bp197kkj454fi88n9xo.mysql.rds.aliyuncs.com:3306/blog?useUnicode=true&characterEncoding=utf8
+    username: blog
+    password: jt6543@!
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+      
+mybatis: 
+  mapperLocations: classpath:conf/mybatis/mapper/oracle/*.xml
+  typeAliasesPackage: jieyi.accservice.form
+
+communicate: 
+  serverip: 172.17.20.15
+  serverport: 41005
+  datagramxmlpath: \src\main\resources\conf\datagramxml
+customcommincicate:
+  serverip: 172.17.20.15
+  serverport: 30002
+  servername: /customer/v1/
+zjbomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Zjbcardservice/account/cardInfoQuery
+jtbomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Jtbcardservice/account/cardInfoQuery
+jtbEcashSave:
+  serverip: 172.17.20.14
+  serverport: 30001
+  servername: /jtbcard/1162/V1
+jtbEcashSaveConfirm:
+  serverip: 172.17.20.14
+  serverport: 30001
+  servername: /jtbcard/5162/V1
+pbocomcommincicate:
+  serverip: 172.17.20.15
+  serverport: 8095
+  servername: /Pboccardservice/account/cardInfoQuery
+
+bizparam: 
+  tsk: 6F186550AF0E78265154F726387E756C
+
+des: 
+  key: 78B49F4BF5B16A17
+  otherkey: f85as39l
+  
+qrcode: 
+  balance: 200
+  
+custSys: 
+  modulus: 8B6D8CAE9C9494FC1AE3C90E5869111447FA19F66F62D904787C973862D08B0056CA891ECA0CA7CF5D38407BA7AF8FC9A83624CDC46B9A47B0FEBAD0FC730D80C7C1CA1088731D758C6D26A3A2DF7BD7634EEA107B6D752609A16C9C671758A853135214425C58B0DD25779DFB070B08817F0828C72BEF11A5D7F998D0F81D49
+  exponent: 4782B76DF3372DB6A3E00285CE088D4EF69FAAE33F3BD68CB9734568111E5EBC9CC7224EDD58625533BD9F2D0CD3398F372C15F24774DCDB3A475BEFC61B08682A941F8B170B82944FB3CEBBD12E37190853271B88018F55A30E788CA2EF944BB0DDB3BA7D08426D0825A040AF3D082DDCA238EAC5445D372891AE6AF11D7FB5
+  reqinstid: 23000000
+
+images: 
+  url: /home/blog/images/

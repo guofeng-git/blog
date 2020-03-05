@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TInfoCustomerMapper" >
+    <resultMap id="BaseResultMap" type="jieyi.accservice.form.TInfoCustomer" >
+        <id column="CUSTOMER_NO" property="customerNo" jdbcType="VARCHAR" />
+        <result column="IS_REALNAME" property="isRealname" jdbcType="CHAR" />
+        <result column="IF_CERTIFIED" property="ifCertified" jdbcType="CHAR" />
+        <result column="HLDNAME" property="hldname" jdbcType="VARCHAR" />
+        <result column="HLDPPTYPE" property="hldpptype" jdbcType="CHAR" />
+        <result column="HLDPPNO" property="hldppno" jdbcType="VARCHAR" />
+        <result column="HLDTEL" property="hldtel" jdbcType="VARCHAR" />
+        <result column="GRADE" property="grade" jdbcType="CHAR" />
+        <result column="CUSTTYPE" property="custtype" jdbcType="CHAR" />
+        <result column="EMAIL_ADDRESS" property="emailAddress" jdbcType="VARCHAR" />
+        <result column="NICK_NAME" property="nickName" jdbcType="VARCHAR" />
+        <result column="LOGIN_ID" property="loginId" jdbcType="VARCHAR" />
+        <result column="PINKEY" property="pinkey" jdbcType="VARCHAR" />
+        <result column="GENDER" property="gender" jdbcType="CHAR" />
+        <result column="HOME_PHONE" property="homePhone" jdbcType="VARCHAR" />
+        <result column="OFFICE_PHONE" property="officePhone" jdbcType="VARCHAR" />
+        <result column="LINKMAN_ADD" property="linkmanAdd" jdbcType="VARCHAR" />
+        <result column="LINKMAN_ADD_PHONE" property="linkmanAddPhone" jdbcType="VARCHAR" />
+        <result column="PROVINCE" property="province" jdbcType="VARCHAR" />
+        <result column="CITY" property="city" jdbcType="VARCHAR" />
+        <result column="COUNTY" property="county" jdbcType="VARCHAR" />
+        <result column="QQ" property="qq" jdbcType="VARCHAR" />
+        <result column="MMESNO" property="mmesno" jdbcType="VARCHAR" />
+        <result column="CONTACT_ADDRESS" property="contactAddress" jdbcType="VARCHAR" />
+        <result column="CONTACT_ZIPCODE" property="contactZipcode" jdbcType="VARCHAR" />
+        <result column="UNIT_ADDRESS" property="unitAddress" jdbcType="VARCHAR" />
+        <result column="UNIT_ZIPCODE" property="unitZipcode" jdbcType="VARCHAR" />
+        <result column="PWD_ERR_NUM" property="pwdErrNum" jdbcType="DECIMAL" />
+        <result column="LOCK_TIME_LIMIT" property="lockTimeLimit" jdbcType="VARCHAR" />
+        <result column="QUESTION" property="question" jdbcType="VARCHAR" />
+        <result column="ANSWER" property="answer" jdbcType="VARCHAR" />
+        <result column="ACTIVE_ADDRESS" property="activeAddress" jdbcType="VARCHAR" />
+        <result column="ACTIVE_CODE" property="activeCode" jdbcType="VARCHAR" />
+        <result column="ACTIVE_STATUS" property="activeStatus" jdbcType="VARCHAR" />
+        <result column="REGISTER_TIME" property="registerTime" jdbcType="VARCHAR" />
+        <result column="PORTRAIT" property="portrait" jdbcType="VARCHAR" />
+        <result column="IS_CLOSED" property="isClosed" jdbcType="CHAR" />
+        <result column="OPEN_CHANNEL" property="openChannel" jdbcType="CHAR" />
+        <result column="STORE_NO" property="storeNo" jdbcType="VARCHAR" />
+        <result column="NETABBR" property="netabbr" jdbcType="VARCHAR" />
+        <result column="MCHNT_NO" property="mchntNo" jdbcType="VARCHAR" />
+        <result column="MCHNT_ABBR" property="mchntAbbr" jdbcType="VARCHAR" />
+        <result column="STATUS" property="status" jdbcType="CHAR" />
+        <result column="LAST_SUCCESS_LOGIN_TIME" property="lastSuccessLoginTime" jdbcType="VARCHAR" />
+        <result column="LAST_SUCCESS_LOGIN_IP" property="lastSuccessLoginIp" jdbcType="VARCHAR" />
+        <result column="LAST_FAIL_LOGIN_TIME" property="lastFailLoginTime" jdbcType="VARCHAR" />
+        <result column="LAST_FAIL_LOGIN_IP" property="lastFailLoginIp" jdbcType="VARCHAR" />
+        <result column="INPUTDATE" property="inputdate" jdbcType="VARCHAR" />
+        <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="VARCHAR" />
+        <result column="INST_ID" property="instId" jdbcType="VARCHAR" />
+        <result column="EMPNO" property="empno" jdbcType="VARCHAR" />
+        <result column="COMPANY" property="company" jdbcType="VARCHAR" />
+        <result column="POST" property="post" jdbcType="VARCHAR" />
+        <result column="DEPARTMENT" property="department" jdbcType="VARCHAR" />
+        <result column="V_HLDNAME" property="vHldname" jdbcType="VARCHAR" />
+        <result column="V_HLDPPNO" property="vHldppno" jdbcType="VARCHAR" />
+        <result column="V_HLDTEL" property="vHldtel" jdbcType="VARCHAR" />
+        <result column="RISK_GRADE" property="riskGrade" jdbcType="VARCHAR" />
+        <result column="RISK_DATE" property="riskDate" jdbcType="VARCHAR" />
+        <result column="ID_VALIDDATE" property="idValiddate" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        CUSTOMER_NO, IS_REALNAME, IF_CERTIFIED, HLDNAME, HLDPPTYPE, HLDPPNO, HLDTEL, GRADE, 
+        CUSTTYPE, EMAIL_ADDRESS, NICK_NAME, LOGIN_ID, PINKEY, GENDER, HOME_PHONE, OFFICE_PHONE, 
+        LINKMAN_ADD, LINKMAN_ADD_PHONE, PROVINCE, CITY, COUNTY, QQ, MMESNO, CONTACT_ADDRESS, 
+        CONTACT_ZIPCODE, UNIT_ADDRESS, UNIT_ZIPCODE, PWD_ERR_NUM, LOCK_TIME_LIMIT, QUESTION, 
+        ANSWER, ACTIVE_ADDRESS, ACTIVE_CODE, ACTIVE_STATUS, REGISTER_TIME, PORTRAIT, IS_CLOSED, 
+        OPEN_CHANNEL, STORE_NO, NETABBR, MCHNT_NO, MCHNT_ABBR, STATUS, LAST_SUCCESS_LOGIN_TIME, 
+        LAST_SUCCESS_LOGIN_IP, LAST_FAIL_LOGIN_TIME, LAST_FAIL_LOGIN_IP, INPUTDATE, LAST_UPDATE_TIME, 
+        INST_ID, EMPNO, COMPANY, POST, DEPARTMENT, V_HLDNAME, V_HLDPPNO, V_HLDTEL, RISK_GRADE, 
+        RISK_DATE, ID_VALIDDATE
+    </sql>
+    
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_CUSTOMER
+        where CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="map" >
+        select 
+        <include refid="Base_Column_List" />
+        from T_INFO_CUSTOMER
+        <where>
+        	<if test="hldtel != null and hldtel != ''">AND HLDTEL = #{hldtel,jdbcType=VARCHAR}</if>
+        </where>
+    </select>
+    
+    <delete id="delete" parameterType="map" >
+        delete from T_INFO_CUSTOMER
+        where CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR}
+    </delete>
+    
+    <insert id="insert" parameterType="jieyi.accservice.form.TInfoCustomer" >
+        insert into T_INFO_CUSTOMER
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="customerNo != null" >
+                CUSTOMER_NO,
+            </if>
+            <if test="isRealname != null" >
+                IS_REALNAME,
+            </if>
+            <if test="ifCertified != null" >
+                IF_CERTIFIED,
+            </if>
+            <if test="hldname != null" >
+                HLDNAME,
+            </if>
+            <if test="hldpptype != null" >
+                HLDPPTYPE,
+            </if>
+            <if test="hldppno != null" >
+                HLDPPNO,
+            </if>
+            <if test="hldtel != null" >
+                HLDTEL,
+            </if>
+            <if test="grade != null" >
+                GRADE,
+            </if>
+            <if test="custtype != null" >
+                CUSTTYPE,
+            </if>
+            <if test="emailAddress != null" >
+                EMAIL_ADDRESS,
+            </if>
+            <if test="nickName != null" >
+                NICK_NAME,
+            </if>
+            <if test="loginId != null" >
+                LOGIN_ID,
+            </if>
+            <if test="pinkey != null" >
+                PINKEY,
+            </if>
+            <if test="gender != null" >
+                GENDER,
+            </if>
+            <if test="homePhone != null" >
+                HOME_PHONE,
+            </if>
+            <if test="officePhone != null" >
+                OFFICE_PHONE,
+            </if>
+            <if test="linkmanAdd != null" >
+                LINKMAN_ADD,
+            </if>
+            <if test="linkmanAddPhone != null" >
+                LINKMAN_ADD_PHONE,
+            </if>
+            <if test="province != null" >
+                PROVINCE,
+            </if>
+            <if test="city != null" >
+                CITY,
+            </if>
+            <if test="county != null" >
+                COUNTY,
+            </if>
+            <if test="qq != null" >
+                QQ,
+            </if>
+            <if test="mmesno != null" >
+                MMESNO,
+            </if>
+            <if test="contactAddress != null" >
+                CONTACT_ADDRESS,
+            </if>
+            <if test="contactZipcode != null" >
+                CONTACT_ZIPCODE,
+            </if>
+            <if test="unitAddress != null" >
+                UNIT_ADDRESS,
+            </if>
+            <if test="unitZipcode != null" >
+                UNIT_ZIPCODE,
+            </if>
+            <if test="pwdErrNum != null" >
+                PWD_ERR_NUM,
+            </if>
+            <if test="lockTimeLimit != null" >
+                LOCK_TIME_LIMIT,
+            </if>
+            <if test="question != null" >
+                QUESTION,
+            </if>
+            <if test="answer != null" >
+                ANSWER,
+            </if>
+            <if test="activeAddress != null" >
+                ACTIVE_ADDRESS,
+            </if>
+            <if test="activeCode != null" >
+                ACTIVE_CODE,
+            </if>
+            <if test="activeStatus != null" >
+                ACTIVE_STATUS,
+            </if>
+            <if test="registerTime != null" >
+                REGISTER_TIME,
+            </if>
+            <if test="portrait != null" >
+                PORTRAIT,
+            </if>
+            <if test="isClosed != null" >
+                IS_CLOSED,
+            </if>
+            <if test="openChannel != null" >
+                OPEN_CHANNEL,
+            </if>
+            <if test="storeNo != null" >
+                STORE_NO,
+            </if>
+            <if test="netabbr != null" >
+                NETABBR,
+            </if>
+            <if test="mchntNo != null" >
+                MCHNT_NO,
+            </if>
+            <if test="mchntAbbr != null" >
+                MCHNT_ABBR,
+            </if>
+            <if test="status != null" >
+                STATUS,
+            </if>
+            <if test="lastSuccessLoginTime != null" >
+                LAST_SUCCESS_LOGIN_TIME,
+            </if>
+            <if test="lastSuccessLoginIp != null" >
+                LAST_SUCCESS_LOGIN_IP,
+            </if>
+            <if test="lastFailLoginTime != null" >
+                LAST_FAIL_LOGIN_TIME,
+            </if>
+            <if test="lastFailLoginIp != null" >
+                LAST_FAIL_LOGIN_IP,
+            </if>
+            <if test="inputdate != null" >
+                INPUTDATE,
+            </if>
+            <if test="lastUpdateTime != null" >
+                LAST_UPDATE_TIME,
+            </if>
+            <if test="instId != null" >
+                INST_ID,
+            </if>
+            <if test="empno != null" >
+                EMPNO,
+            </if>
+            <if test="company != null" >
+                COMPANY,
+            </if>
+            <if test="post != null" >
+                POST,
+            </if>
+            <if test="department != null" >
+                DEPARTMENT,
+            </if>
+            <if test="vHldname != null" >
+                V_HLDNAME,
+            </if>
+            <if test="vHldppno != null" >
+                V_HLDPPNO,
+            </if>
+            <if test="vHldtel != null" >
+                V_HLDTEL,
+            </if>
+            <if test="riskGrade != null" >
+                RISK_GRADE,
+            </if>
+            <if test="riskDate != null" >
+                RISK_DATE,
+            </if>
+            <if test="idValiddate != null" >
+                ID_VALIDDATE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="customerNo != null" >
+                #{customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="isRealname != null" >
+                #{isRealname,jdbcType=CHAR},
+            </if>
+            <if test="ifCertified != null" >
+                #{ifCertified,jdbcType=CHAR},
+            </if>
+            <if test="hldname != null" >
+                #{hldname,jdbcType=VARCHAR},
+            </if>
+            <if test="hldpptype != null" >
+                #{hldpptype,jdbcType=CHAR},
+            </if>
+            <if test="hldppno != null" >
+                #{hldppno,jdbcType=VARCHAR},
+            </if>
+            <if test="hldtel != null" >
+                #{hldtel,jdbcType=VARCHAR},
+            </if>
+            <if test="grade != null" >
+                #{grade,jdbcType=CHAR},
+            </if>
+            <if test="custtype != null" >
+                #{custtype,jdbcType=CHAR},
+            </if>
+            <if test="emailAddress != null" >
+                #{emailAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null" >
+                #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="loginId != null" >
+                #{loginId,jdbcType=VARCHAR},
+            </if>
+            <if test="pinkey != null" >
+                #{pinkey,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null" >
+                #{gender,jdbcType=CHAR},
+            </if>
+            <if test="homePhone != null" >
+                #{homePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="officePhone != null" >
+                #{officePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="linkmanAdd != null" >
+                #{linkmanAdd,jdbcType=VARCHAR},
+            </if>
+            <if test="linkmanAddPhone != null" >
+                #{linkmanAddPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="county != null" >
+                #{county,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null" >
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="mmesno != null" >
+                #{mmesno,jdbcType=VARCHAR},
+            </if>
+            <if test="contactAddress != null" >
+                #{contactAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="contactZipcode != null" >
+                #{contactZipcode,jdbcType=VARCHAR},
+            </if>
+            <if test="unitAddress != null" >
+                #{unitAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="unitZipcode != null" >
+                #{unitZipcode,jdbcType=VARCHAR},
+            </if>
+            <if test="pwdErrNum != null" >
+                #{pwdErrNum,jdbcType=DECIMAL},
+            </if>
+            <if test="lockTimeLimit != null" >
+                #{lockTimeLimit,jdbcType=VARCHAR},
+            </if>
+            <if test="question != null" >
+                #{question,jdbcType=VARCHAR},
+            </if>
+            <if test="answer != null" >
+                #{answer,jdbcType=VARCHAR},
+            </if>
+            <if test="activeAddress != null" >
+                #{activeAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="activeCode != null" >
+                #{activeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="activeStatus != null" >
+                #{activeStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="registerTime != null" >
+                #{registerTime,jdbcType=VARCHAR},
+            </if>
+            <if test="portrait != null" >
+                #{portrait,jdbcType=VARCHAR},
+            </if>
+            <if test="isClosed != null" >
+                #{isClosed,jdbcType=CHAR},
+            </if>
+            <if test="openChannel != null" >
+                #{openChannel,jdbcType=CHAR},
+            </if>
+            <if test="storeNo != null" >
+                #{storeNo,jdbcType=VARCHAR},
+            </if>
+            <if test="netabbr != null" >
+                #{netabbr,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntNo != null" >
+                #{mchntNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntAbbr != null" >
+                #{mchntAbbr,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=CHAR},
+            </if>
+            <if test="lastSuccessLoginTime != null" >
+                #{lastSuccessLoginTime,jdbcType=VARCHAR},
+            </if>
+            <if test="lastSuccessLoginIp != null" >
+                #{lastSuccessLoginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="lastFailLoginTime != null" >
+                #{lastFailLoginTime,jdbcType=VARCHAR},
+            </if>
+            <if test="lastFailLoginIp != null" >
+                #{lastFailLoginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="inputdate != null" >
+                #{inputdate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null" >
+                #{lastUpdateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="instId != null" >
+                #{instId,jdbcType=VARCHAR},
+            </if>
+            <if test="empno != null" >
+                #{empno,jdbcType=VARCHAR},
+            </if>
+            <if test="company != null" >
+                #{company,jdbcType=VARCHAR},
+            </if>
+            <if test="post != null" >
+                #{post,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null" >
+                #{department,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldname != null" >
+                #{vHldname,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldppno != null" >
+                #{vHldppno,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldtel != null" >
+                #{vHldtel,jdbcType=VARCHAR},
+            </if>
+            <if test="riskGrade != null" >
+                #{riskGrade,jdbcType=VARCHAR},
+            </if>
+            <if test="riskDate != null" >
+                #{riskDate,jdbcType=VARCHAR},
+            </if>
+            <if test="idValiddate != null" >
+                #{idValiddate,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="jieyi.accservice.form.TInfoCustomer" >
+        update T_INFO_CUSTOMER
+        <set >
+            <if test="isRealname != null" >
+                IS_REALNAME = #{isRealname,jdbcType=CHAR},
+            </if>
+            <if test="ifCertified != null" >
+                IF_CERTIFIED = #{ifCertified,jdbcType=CHAR},
+            </if>
+            <if test="hldname != null" >
+                HLDNAME = #{hldname,jdbcType=VARCHAR},
+            </if>
+            <if test="hldpptype != null" >
+                HLDPPTYPE = #{hldpptype,jdbcType=CHAR},
+            </if>
+            <if test="hldppno != null" >
+                HLDPPNO = #{hldppno,jdbcType=VARCHAR},
+            </if>
+            <if test="hldtel != null" >
+                HLDTEL = #{hldtel,jdbcType=VARCHAR},
+            </if>
+            <if test="grade != null" >
+                GRADE = #{grade,jdbcType=CHAR},
+            </if>
+            <if test="custtype != null" >
+                CUSTTYPE = #{custtype,jdbcType=CHAR},
+            </if>
+            <if test="emailAddress != null" >
+                EMAIL_ADDRESS = #{emailAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null" >
+                NICK_NAME = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="loginId != null" >
+                LOGIN_ID = #{loginId,jdbcType=VARCHAR},
+            </if>
+            <if test="pinkey != null" >
+                PINKEY = #{pinkey,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null" >
+                GENDER = #{gender,jdbcType=CHAR},
+            </if>
+            <if test="homePhone != null" >
+                HOME_PHONE = #{homePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="officePhone != null" >
+                OFFICE_PHONE = #{officePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="linkmanAdd != null" >
+                LINKMAN_ADD = #{linkmanAdd,jdbcType=VARCHAR},
+            </if>
+            <if test="linkmanAddPhone != null" >
+                LINKMAN_ADD_PHONE = #{linkmanAddPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                PROVINCE = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                CITY = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="county != null" >
+                COUNTY = #{county,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null" >
+                QQ = #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="mmesno != null" >
+                MMESNO = #{mmesno,jdbcType=VARCHAR},
+            </if>
+            <if test="contactAddress != null" >
+                CONTACT_ADDRESS = #{contactAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="contactZipcode != null" >
+                CONTACT_ZIPCODE = #{contactZipcode,jdbcType=VARCHAR},
+            </if>
+            <if test="unitAddress != null" >
+                UNIT_ADDRESS = #{unitAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="unitZipcode != null" >
+                UNIT_ZIPCODE = #{unitZipcode,jdbcType=VARCHAR},
+            </if>
+            <if test="pwdErrNum != null" >
+                PWD_ERR_NUM = #{pwdErrNum,jdbcType=DECIMAL},
+            </if>
+            <if test="lockTimeLimit != null" >
+                LOCK_TIME_LIMIT = #{lockTimeLimit,jdbcType=VARCHAR},
+            </if>
+            <if test="question != null" >
+                QUESTION = #{question,jdbcType=VARCHAR},
+            </if>
+            <if test="answer != null" >
+                ANSWER = #{answer,jdbcType=VARCHAR},
+            </if>
+            <if test="activeAddress != null" >
+                ACTIVE_ADDRESS = #{activeAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="activeCode != null" >
+                ACTIVE_CODE = #{activeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="activeStatus != null" >
+                ACTIVE_STATUS = #{activeStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="registerTime != null" >
+                REGISTER_TIME = #{registerTime,jdbcType=VARCHAR},
+            </if>
+            <if test="portrait != null" >
+                PORTRAIT = #{portrait,jdbcType=VARCHAR},
+            </if>
+            <if test="isClosed != null" >
+                IS_CLOSED = #{isClosed,jdbcType=CHAR},
+            </if>
+            <if test="openChannel != null" >
+                OPEN_CHANNEL = #{openChannel,jdbcType=CHAR},
+            </if>
+            <if test="storeNo != null" >
+                STORE_NO = #{storeNo,jdbcType=VARCHAR},
+            </if>
+            <if test="netabbr != null" >
+                NETABBR = #{netabbr,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntNo != null" >
+                MCHNT_NO = #{mchntNo,jdbcType=VARCHAR},
+            </if>
+            <if test="mchntAbbr != null" >
+                MCHNT_ABBR = #{mchntAbbr,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                STATUS = #{status,jdbcType=CHAR},
+            </if>
+            <if test="lastSuccessLoginTime != null" >
+                LAST_SUCCESS_LOGIN_TIME = #{lastSuccessLoginTime,jdbcType=VARCHAR},
+            </if>
+            <if test="lastSuccessLoginIp != null" >
+                LAST_SUCCESS_LOGIN_IP = #{lastSuccessLoginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="lastFailLoginTime != null" >
+                LAST_FAIL_LOGIN_TIME = #{lastFailLoginTime,jdbcType=VARCHAR},
+            </if>
+            <if test="lastFailLoginIp != null" >
+                LAST_FAIL_LOGIN_IP = #{lastFailLoginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="inputdate != null" >
+                INPUTDATE = #{inputdate,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null" >
+                LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="instId != null" >
+                INST_ID = #{instId,jdbcType=VARCHAR},
+            </if>
+            <if test="empno != null" >
+                EMPNO = #{empno,jdbcType=VARCHAR},
+            </if>
+            <if test="company != null" >
+                COMPANY = #{company,jdbcType=VARCHAR},
+            </if>
+            <if test="post != null" >
+                POST = #{post,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null" >
+                DEPARTMENT = #{department,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldname != null" >
+                V_HLDNAME = #{vHldname,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldppno != null" >
+                V_HLDPPNO = #{vHldppno,jdbcType=VARCHAR},
+            </if>
+            <if test="vHldtel != null" >
+                V_HLDTEL = #{vHldtel,jdbcType=VARCHAR},
+            </if>
+            <if test="riskGrade != null" >
+                RISK_GRADE = #{riskGrade,jdbcType=VARCHAR},
+            </if>
+            <if test="riskDate != null" >
+                RISK_DATE = #{riskDate,jdbcType=VARCHAR},
+            </if>
+            <if test="idValiddate != null" >
+                ID_VALIDDATE = #{idValiddate,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR}
+    </update>
+</mapper>

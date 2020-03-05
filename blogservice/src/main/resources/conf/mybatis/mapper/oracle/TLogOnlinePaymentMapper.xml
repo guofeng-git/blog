@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jieyi.accservice.dao.TLogOnlinePaymentMapper" >
+  <resultMap id="BaseResultMap" type="jieyi.accservice.form.TLogOnlinePayment" >
+    <id column="SETTDATE" property="settdate" jdbcType="DECIMAL" />
+    <id column="CENSEQ" property="censeq" jdbcType="CHAR" />
+    <result column="CENTDATE" property="centdate" jdbcType="DECIMAL" />
+    <result column="CENTTIME" property="centtime" jdbcType="DECIMAL" />
+    <result column="TXNCODE" property="txncode" jdbcType="VARCHAR" />
+    <result column="INNTYPE" property="inntype" jdbcType="VARCHAR" />
+    <result column="PRODUCT_NO" property="productNo" jdbcType="VARCHAR" />
+    <result column="TRANS_CATE" property="transCate" jdbcType="CHAR" />
+    <result column="BUSS_CATE" property="bussCate" jdbcType="CHAR" />
+    <result column="CHNL_TRANS_UKEY" property="chnlTransUkey" jdbcType="VARCHAR" />
+    <result column="CHNL_TRANS_RKEY" property="chnlTransRkey" jdbcType="VARCHAR" />
+    <result column="REF_TRANS_KEY" property="refTransKey" jdbcType="VARCHAR" />
+    <result column="TXNDESC" property="txndesc" jdbcType="VARCHAR" />
+    <result column="TXN_CHANNEL" property="txnChannel" jdbcType="VARCHAR" />
+    <result column="AUTH_KEY" property="authKey" jdbcType="CHAR" />
+    <result column="ACQINST" property="acqinst" jdbcType="VARCHAR" />
+    <result column="ISSUEINST" property="issueinst" jdbcType="VARCHAR" />
+    <result column="TRNSINST" property="trnsinst" jdbcType="VARCHAR" />
+    <result column="TRNSINSTSEQ" property="trnsinstseq" jdbcType="VARCHAR" />
+    <result column="TRANSDT" property="transdt" jdbcType="CHAR" />
+    <result column="TRNSDATE" property="trnsdate" jdbcType="CHAR" />
+    <result column="TRNSTIME" property="trnstime" jdbcType="CHAR" />
+    <result column="REF_KEY" property="refKey" jdbcType="VARCHAR" />
+    <result column="TXNDATE" property="txndate" jdbcType="CHAR" />
+    <result column="TXNTIME" property="txntime" jdbcType="CHAR" />
+    <result column="TXNMCHNTCD" property="txnmchntcd" jdbcType="VARCHAR" />
+    <result column="TXNMCHNTNAME" property="txnmchntname" jdbcType="VARCHAR" />
+    <result column="TXNNETCD" property="txnnetcd" jdbcType="VARCHAR" />
+    <result column="TXNNETNAME" property="txnnetname" jdbcType="VARCHAR" />
+    <result column="TXNOPRID" property="txnoprid" jdbcType="VARCHAR" />
+    <result column="TERMID" property="termid" jdbcType="VARCHAR" />
+    <result column="TERMBATCHNO" property="termbatchno" jdbcType="VARCHAR" />
+    <result column="TERMSEQ" property="termseq" jdbcType="VARCHAR" />
+    <result column="SETTMCHNTCD" property="settmchntcd" jdbcType="VARCHAR" />
+    <result column="SETTMCHNTNAME" property="settmchntname" jdbcType="VARCHAR" />
+    <result column="SETTMCC" property="settmcc" jdbcType="VARCHAR" />
+    <result column="REQAMT" property="reqamt" jdbcType="DECIMAL" />
+    <result column="BEFORE_AMT" property="beforeAmt" jdbcType="DECIMAL" />
+    <result column="TXNAMT" property="txnamt" jdbcType="DECIMAL" />
+    <result column="AFTER_AMT" property="afterAmt" jdbcType="DECIMAL" />
+    <result column="FEE_IN_FLAG" property="feeInFlag" jdbcType="CHAR" />
+    <result column="FEE_AMT" property="feeAmt" jdbcType="DECIMAL" />
+    <result column="P_FEE_NO" property="pFeeNo" jdbcType="VARCHAR" />
+    <result column="P_FEE_TYPE" property="pFeeType" jdbcType="CHAR" />
+    <result column="P_FEE_NAME" property="pFeeName" jdbcType="VARCHAR" />
+    <result column="P_FEE_AMT" property="pFeeAmt" jdbcType="DECIMAL" />
+    <result column="ACCOUNT_NO" property="accountNo" jdbcType="VARCHAR" />
+    <result column="ACCTYPE" property="acctype" jdbcType="CHAR" />
+    <result column="CUSTOMER_NO" property="customerNo" jdbcType="VARCHAR" />
+    <result column="CARDNO" property="cardno" jdbcType="VARCHAR" />
+    <result column="OLFLAG" property="olflag" jdbcType="CHAR" />
+    <result column="CARD_BIN" property="cardBin" jdbcType="VARCHAR" />
+    <result column="CARD_TYPE" property="cardType" jdbcType="VARCHAR" />
+    <result column="CARD_MEDIA_ID" property="cardMediaId" jdbcType="VARCHAR" />
+    <result column="REVSAL_FLAG" property="revsalFlag" jdbcType="CHAR" />
+    <result column="REVSAL_TXN_SEQ_NO" property="revsalTxnSeqNo" jdbcType="CHAR" />
+    <result column="CANCEL_FLAG" property="cancelFlag" jdbcType="CHAR" />
+    <result column="CANCEL_TXN_SEQ_NO" property="cancelTxnSeqNo" jdbcType="CHAR" />
+    <result column="MAIN_CARD_NO" property="mainCardNo" jdbcType="VARCHAR" />
+    <result column="ORG_CENSEQ" property="orgCenseq" jdbcType="CHAR" />
+    <result column="ORG_TRNSINSTSEQ" property="orgTrnsinstseq" jdbcType="VARCHAR" />
+    <result column="ORG_TRANSDT" property="orgTransdt" jdbcType="VARCHAR" />
+    <result column="ORG_TRNSDATE" property="orgTrnsdate" jdbcType="VARCHAR" />
+    <result column="ORG_TXNDATE" property="orgTxndate" jdbcType="VARCHAR" />
+    <result column="ORG_SETTDATE" property="orgSettdate" jdbcType="DECIMAL" />
+    <result column="ORG_TERMBATCHNO" property="orgTermbatchno" jdbcType="VARCHAR" />
+    <result column="ORG_TERMSEQ" property="orgTermseq" jdbcType="VARCHAR" />
+    <result column="ORG_TERMID" property="orgTermid" jdbcType="VARCHAR" />
+    <result column="ORG_REF_KEY" property="orgRefKey" jdbcType="VARCHAR" />
+    <result column="RETURN_FLAG" property="returnFlag" jdbcType="CHAR" />
+    <result column="RETURN_COUNT" property="returnCount" jdbcType="DECIMAL" />
+    <result column="RETURN_AMT" property="returnAmt" jdbcType="DECIMAL" />
+    <result column="IN_ACCOUNT_NO" property="inAccountNo" jdbcType="VARCHAR" />
+    <result column="IN_CARD_NO" property="inCardNo" jdbcType="VARCHAR" />
+    <result column="IN_TYPE" property="inType" jdbcType="CHAR" />
+    <result column="ERRCODE" property="errcode" jdbcType="DECIMAL" />
+    <result column="ERROR_DESC" property="errorDesc" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="MOBILE_PHONE" property="mobilePhone" jdbcType="VARCHAR" />
+    <result column="ID_TYPE" property="idType" jdbcType="CHAR" />
+    <result column="ID_NO" property="idNo" jdbcType="VARCHAR" />
+    <result column="CRD_STATUS" property="crdStatus" jdbcType="CHAR" />
+    <result column="FUND_STATUS" property="fundStatus" jdbcType="CHAR" />
+    <result column="SERVICECODE" property="servicecode" jdbcType="CHAR" />
+    <result column="MCHNTID_OUT" property="mchntidOut" jdbcType="VARCHAR" />
+    <result column="TERMID_OUT" property="termidOut" jdbcType="VARCHAR" />
+    <result column="RSVAMT1" property="rsvamt1" jdbcType="DECIMAL" />
+    <result column="RSVAMT2" property="rsvamt2" jdbcType="DECIMAL" />
+    <result column="RSVAMT3" property="rsvamt3" jdbcType="DECIMAL" />
+    <result column="AUTHOPRID" property="authoprid" jdbcType="VARCHAR" />
+    <result column="TESTFLAG" property="testflag" jdbcType="DECIMAL" />
+    <result column="INPUTTIME" property="inputtime" jdbcType="CHAR" />
+    <result column="MODFYTIME" property="modfytime" jdbcType="CHAR" />
+    <result column="ORDER_NO" property="orderNo" jdbcType="VARCHAR" />
+    <result column="PAY_TYPE" property="payType" jdbcType="VARCHAR" />
+    <result column="BRANCHNO" property="branchno" jdbcType="VARCHAR" />
+    <result column="BEFORE_VALID_DATE" property="beforeValidDate" jdbcType="VARCHAR" />
+    <result column="AFTER_VALID_DATE" property="afterValidDate" jdbcType="VARCHAR" />
+    <result column="PAY_DATE" property="payDate" jdbcType="VARCHAR" />
+    <result column="CHGCRDTYPE" property="chgcrdtype" jdbcType="VARCHAR" />
+    <result column="IFRETURN" property="ifreturn" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SETTDATE, CENSEQ, CENTDATE, CENTTIME, TXNCODE, INNTYPE, PRODUCT_NO, TRANS_CATE, BUSS_CATE, 
+    CHNL_TRANS_UKEY, CHNL_TRANS_RKEY, REF_TRANS_KEY, TXNDESC, TXN_CHANNEL, AUTH_KEY, 
+    ACQINST, ISSUEINST, TRNSINST, TRNSINSTSEQ, TRANSDT, TRNSDATE, TRNSTIME, REF_KEY, 
+    TXNDATE, TXNTIME, TXNMCHNTCD, TXNMCHNTNAME, TXNNETCD, TXNNETNAME, TXNOPRID, TERMID, 
+    TERMBATCHNO, TERMSEQ, SETTMCHNTCD, SETTMCHNTNAME, SETTMCC, REQAMT, BEFORE_AMT, TXNAMT, 
+    AFTER_AMT, FEE_AMT, P_FEE_NO, P_FEE_TYPE, P_FEE_NAME, P_FEE_AMT, ACCOUNT_NO, 
+    ACCTYPE, CUSTOMER_NO, CARDNO, OLFLAG, CARD_BIN, CARD_TYPE, CARD_MEDIA_ID, REVSAL_FLAG, 
+    REVSAL_TXN_SEQ_NO, CANCEL_FLAG, CANCEL_TXN_SEQ_NO, MAIN_CARD_NO, ORG_CENSEQ, ORG_TRNSINSTSEQ, 
+    ORG_TRANSDT, ORG_TRNSDATE, ORG_TXNDATE, ORG_SETTDATE, ORG_TERMBATCHNO, ORG_TERMSEQ, 
+    ORG_TERMID, ORG_REF_KEY, RETURN_FLAG, RETURN_COUNT, RETURN_AMT, IN_ACCOUNT_NO, IN_CARD_NO, 
+    IN_TYPE, ERRCODE, ERROR_DESC, NAME, MOBILE_PHONE, ID_TYPE, ID_NO, CRD_STATUS, FUND_STATUS, 
+    SERVICECODE, MCHNTID_OUT, TERMID_OUT, RSVAMT1, RSVAMT2, RSVAMT3, AUTHOPRID, TESTFLAG, 
+    INPUTTIME, MODFYTIME,ORDER_NO, BRANCHNO,PAY_TYPE,BEFORE_VALID_DATE,AFTER_VALID_DATE,PAY_DATE,
+    CHGCRDTYPE,IFRETURN
+  </sql>
+ 
+ <sql id="TxnQuery_List" >
+     substr(TXNCODE,5,8) as TXNCODE,TXNDESC,REF_KEY,TXNDATE, TXNTIME, TXNMCHNTCD, TXNMCHNTNAME, TXNNETCD, TERMID, 
+    TERMSEQ, REQAMT, BEFORE_AMT, TXNAMT,AFTER_AMT
+  </sql>
+ 
+  <select id="selectByRefKey" resultMap="BaseResultMap" parameterType="map">
+    select <include refid="Base_Column_List" />
+    from ${tableName}
+    where REF_KEY = #{refkey,jdbcType=VARCHAR}
+      and INNTYPE = #{inntype,jdbcType=VARCHAR}
+  </select>
+ 
+ <select id="selectByOrderNo" resultMap="BaseResultMap" parameterType="map">
+    select <include refid="Base_Column_List" />
+    from view_t_log_online_payment
+    where ORDER_NO = #{orderNo,jdbcType=VARCHAR} and INNTYPE='10000105'
+  </select>
+  
+  <select id="selectByRefno" resultMap="BaseResultMap" parameterType="map">
+    select <include refid="Base_Column_List" />
+    from view_t_log_online_payment
+    where REF_KEY = #{refKey,jdbcType=VARCHAR} and INNTYPE='10000110'
+  </select>
+  
+  <select id="selectForTxnInfo" resultMap="BaseResultMap" parameterType="map">
+	select * from (select tmp_tb.*, ROWNUM row_id from
+	(select
+	<include refid="TxnQuery_List" />
+	from view_t_log_online_payment t
+	<where>
+		t.INNTYPE in ('10000105','10000107','10000110','10000114','10000202','10000116') and
+		t.ERRCODE='0000'
+		<if test="txnmchntcd != null and txnmchntcd != ''">
+			AND t.TXNMCHNTCD = #{txnmchntcd}
+		</if>
+		<if test="termid != null and termid != ''">
+			AND t.TERMID = #{termid}
+		</if>
+		<if test="txnnetcd != null and txnnetcd != ''">
+			AND t.TXNNETCD = #{txnnetcd}
+		</if>
+		<if test="refKey != null and refKey != ''">
+			AND t.REF_KEY = #{refKey}
+		</if>
+		<if test="txndateStart != null and txndateStart != ''">
+			AND t.TXNDATE >= #{txndateStart}
+		</if>
+		<if test="txndateEnd != null and txndateEnd != ''">
+			AND #{txndateEnd} >= t.TXNDATE
+		</if>
+		<if test="txncode != null and txncode != ''">
+			AND t.TXNCODE = #{txncode}
+		</if>
+		<if test="acctype != null and acctype != ''">
+			AND t.ACCTYPE = #{acctype}
+		</if>
+		<if test="customer_no != null and customer_no != ''">
+			AND t.CUSTOMER_NO in ${customer_no}
+		</if>
+	</where>
+	order by t.TXNDATE desc,t.TXNTIME desc)tmp_tb
+	<where>
+		<if test="endNum != null and endNum != ''">
+			#{endNum}>=ROWNUM
+		</if>
+	</where>
+	)
+	<where>
+		<if test="startNum != null and startNum != ''">
+			row_id >= #{startNum}
+		</if>
+	</where>
+  </select>
+  
+  <select id="selectForClose" resultMap="BaseResultMap" parameterType="map">
+    select t.*
+    from view_t_log_online_payment t
+    <where> 
+    t.ERRCODE='0000' and  t.CANCEL_FLAG='N' and t.RETURN_FLAG='N'
+    <if test="accountNo != null and accountNo != ''">
+		AND t.ACCOUNT_NO = #{accountNo}
+	</if>
+	 <if test="inntype != null and inntype != ''">
+		AND t.INNTYPE = #{inntype}
+	</if>
+	</where>
+  </select>
+</mapper>

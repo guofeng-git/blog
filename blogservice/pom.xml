@@ -102,7 +102,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.48.sec06</version>
+			<version>1.2.83</version>
 		</dependency>
 		<!-- 8583报文组解包 -->
 		<dependency>
